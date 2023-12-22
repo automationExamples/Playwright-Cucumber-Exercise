@@ -7,6 +7,5 @@ Then('I will add the backpack to the cart', async () => {
   await new Product(getPage()).addBackPackToCart();
 });
 Then('I can view cart', async () => {
-  await new Product(getPage()).
-  await new Checkout(getPage().checkout
+  await new Product(getPage()).viewCart();
 });

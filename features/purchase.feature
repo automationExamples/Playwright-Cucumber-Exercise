@@ -6,5 +6,6 @@ Feature: Purchase Feature
   Scenario:  Validate successful purchase text
   Then I will login as 'standard_user'
   Then I will add the backpack to the cart
+  Then I can view cart
   Then I can checkout
   Then I should see 'Thank you for your order!'

@@ -2,9 +2,7 @@ import { Page, expect } from "@playwright/test"
 
 export class Checkout {
     private readonly page: Page
-    private readonly addToCart: string = 'button[id="add-to-cart-sauce-labs-backpack"]'
-    private readonly cartBtn: string = '[id="shopping_cart_container"]';
-    private readonly checkoutBtn: string = 'checkout[data-test="checkout"]';
+    private readonly checkoutBtn: string = 'button[data-test="checkout"]';
     private readonly firstNameTxt: string = 'input[data-test="firstName"]';
     private readonly lastNameTxt: string = 'input[data-test="lastName"]';
     private readonly postalCodeTxt: string = 'input[data-test="postalCode"]';
@@ -15,15 +13,17 @@ export class Checkout {
     constructor(page: Page) {
         this.page = page;
     }
-    public async enterCheckoutInfo(firstName: string, lastName: string, postalCode: string) {
+    public async enterUserInfo(firstName: string, lastName: string, postalCode: string) {
+        console.log(firstName);
         await this.page.locator(this.firstNameTxt).fill(firstName);
         await this.page.locator(this.lastNameTxt).fill(lastName);
         await this.page.locator(this.postalCodeTxt).fill(postalCode);
         await this.page.locator(this.doneCheckoutInfoBtn).click();
     }
     public async checkout(firstName: string, lastName: string, postalCode: string) {
+        await this.page.locator(this.checkoutBtn).click();
         await this.page.locator(this.confirmCheckoutBtn).click();
-        this.enterCheckoutInfo(firstName, lastName, postalCode);
+        this.enterUserInfo(firstName, lastName, postalCode);
         await this.page.locator(this.confirmCheckoutBtn).click();
     }
     public async validateConfirmation(expected: string) {

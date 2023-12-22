@@ -10,8 +10,9 @@ export class Product {
     }
 
     public async addBackPackToCart() {
-        await this.page.locator(this.addToCart).click()
+        await this.page.locator(this.addToCart).click();
     }
-    public async selectCart() {
+    public async viewCart() {
+        await this.page.locator(this.cartBtn).click();
     }
 }

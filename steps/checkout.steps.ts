@@ -4,9 +4,8 @@ import { Product } from '../pages/product.page';
 import { Checkout } from '../pages/checkout.page';
 
 Then('I can checkout', async () => {
-  await new Product(getPage()).checkout();
-  await new Checkout(getPage()).checkout()
+  await new Checkout(getPage()).checkout('Hiep', 'Luong', '95132');
 });
 Then('I should see {string}', async (expected) => {
-  await new Checkout(getPage()).validateConfirmation(expected));
+  await new Checkout(getPage()).validateConfirmation(expected);
 });
