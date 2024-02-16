@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test"
+import { Locator, Page } from "@playwright/test"
 
 export class Login {
     private readonly page: Page
@@ -6,9 +6,11 @@ export class Login {
     private readonly passwordField: string = 'input[id="password"]'
     private readonly userNameField: string = 'input[id="user-name"]'
     private readonly loginButton: string = 'input[id="login-button"]'
+    private readonly errorMessageLocator: Locator
 
     constructor(page: Page) {
         this.page = page;
+        this.errorMessageLocator = page.locator('div.error-message-container.error h3[data-test="error"]');
     }
 
     public async validateTitle(expectedTitle: string) {
@@ -23,4 +25,11 @@ export class Login {
         await this.page.locator(this.passwordField).fill(this.password)
         await this.page.locator(this.loginButton).click()
     }
+
+    public async validateErrorMessage(expectedMessage: string) {
+        const actualMessage = await this.errorMessageLocator.textContent();
+        if (actualMessage === null || actualMessage!.trim() !== expectedMessage.trim()) {
+            throw new Error(`Expected error message to be ${expectedMessage} but found ${actualMessage ?? 'null'}`);
+        }
+    }    
 }
