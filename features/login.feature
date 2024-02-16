@@ -1,12 +1,11 @@
 Feature: Login Feature
 
   Background:
-    Given I open the "https://www.saucedemo.com/" page
+    Given Open the "https://www.saucedemo.com/" page
 
   Scenario: Validate the login page title
-    # TODO: Fix this failing scenario
-    Then I should see the title "Swag Labs"
+    Then Should see the title "Swag Labs"
 
   Scenario: Validate login error message
-    Then I will login as 'locked_out_user'
-    # TODO: Add a step to validate the error message received
+    When User login as 'locked_out_user'
+    Then Display error message as "Epic sadface: Sorry, this user has been locked out."
