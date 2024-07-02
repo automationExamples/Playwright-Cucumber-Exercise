@@ -6,7 +6,7 @@ export class Product {
     private readonly cartButton: string = '//div[@id="shopping_cart_container"]'
     private readonly menuButton: string = '//button[contains(@id,"menu-btn")]'
     private readonly logoutButton: string = '//a[@id="logout_sidebar_link"]'
-    private readonly productSortDropdown: string = 'select[data-test="product_sort_container"]';
+    private readonly productSortDropdown: string = 'select[data-test="product-sort-container"]';
     private readonly inventoryItemNameSelector: string = '.inventory_item_name';
 
     constructor(page: Page) {
