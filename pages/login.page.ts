@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test"
+import { Page, expect } from "@playwright/test"
 
 export class Login {
     private readonly page: Page
@@ -6,6 +6,7 @@ export class Login {
     private readonly passwordField: string = 'input[id="password"]'
     private readonly userNameField: string = 'input[id="user-name"]'
     private readonly loginButton: string = 'input[id="login-button"]'
+    private readonly actualErrorMessage: string = '//*[@id="login_button_container"]/div/form/div[3]/h3'
 
     constructor(page: Page) {
         this.page = page;
@@ -22,5 +23,10 @@ export class Login {
         await this.page.locator(this.userNameField).fill(userName)
         await this.page.locator(this.passwordField).fill(this.password)
         await this.page.locator(this.loginButton).click()
+    }
+
+    public async validateError(expectedErrorMessage: string)
+    {
+        await expect(this.page.locator(this.actualErrorMessage)).toHaveText(expectedErrorMessage);
     }
 }
