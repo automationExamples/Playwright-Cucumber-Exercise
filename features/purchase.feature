@@ -12,3 +12,9 @@ Feature: Purchase Feature
     # TODO: Select Continue
     # TODO: Select Finish
     # TODO: Validate the text 'Thank you for your order!'
+     Then Select the cart (top-right)
+      Then Select Checkout
+      Then Fill in the name 'Sruthi', 'Chappidi', and Zip/Postal Code '75063'
+      Then Select Continue
+      Then Select Finish
+      Then Validate the text 'Thank you for your order!'
