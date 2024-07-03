@@ -1,3 +1,4 @@
+#@Author:Vijay Penumatsha
 Feature: Login Feature
 
   Background:
@@ -5,8 +6,10 @@ Feature: Login Feature
 
   Scenario: Validate the login page title
     # TODO: Fix this failing scenario
-    Then I should see the title "Labs Swag"
+    Then I should see the title "Swag Labs "
 
   Scenario: Validate login error message
-    Then I will login as 'locked_out_user'
+    When The User able to enter Username 'username'
+    Then The User is able to Click on Login button
+    And The User able to verify the Password is required Error Message "Epic sadface: Password is required"
     # TODO: Add a step to validate the error message received
