@@ -10,6 +10,7 @@ Then('I will login as {string}', async (userName) => {
   await new Login(getPage()).loginAsUser(userName);
 });
 
+
 //Vijay Penumatsha
 When('The User able to enter Username {string}', async (userName) => {
   await new Login(getPage()).enterUsername(userName);

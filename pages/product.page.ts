@@ -8,6 +8,7 @@ export class Product {
         this.page = page;
     }
 
+    
     public async addBackPackToCart() {
         await this.page.locator(this.addToCart).click()
     }
