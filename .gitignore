@@ -1,3 +1,5 @@
 report.json
 cucumber_report.html
 /node_modules
+.vscode
+/test-results
