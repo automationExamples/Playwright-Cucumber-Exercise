@@ -35,22 +35,7 @@ export class Product {
         await this.page.waitForSelector(this.pricesitemSelector); // Wait for items to re-render after sorting
       }
 
-      public async areItemsSorted(sortOrder: string): Promise<boolean> {
-        try {
-          if (sortOrder.includes('Price')) {
-            const prices = await this.getItemPrices();
-            return sortOrder.includes('high') ? this.isSortedDescending(prices) : this.isSortedAscending(prices);
-          } else if (sortOrder.includes('Name')) {
-            const names = await this.getItemNames();
-            return sortOrder.includes('A to Z') ? this.isSortedAscending(names) : this.isSortedDescending(names);
-          } else {
-            throw new Error(`Unsupported sort order: ${sortOrder}`);
-          }
-        } catch (error) {
-          console.error('Error verifying sorting:', error);
-          return false; // Return false in case of error
-        }
-      }
+    
 
       public async getItemPrices(): Promise<number[]> {
         const prices = await this.page.$$eval('.inventory_item_price', elements => {
