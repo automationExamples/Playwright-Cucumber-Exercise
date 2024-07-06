@@ -18,6 +18,13 @@ export class Login {
         }
     }
 
+    public async validateErrorMessage(expectedErrorMessage: string){
+        const errorMessage = await this.page.textContent('.error-message-container');
+        if(errorMessage !== expectedErrorMessage){
+            throw new Error(`Expected error message to be ${expectedErrorMessage} but found ${errorMessage}`);
+        }
+    }
+
     public async loginAsUser(userName: string) {
         await this.page.locator(this.userNameField).fill(userName)
         await this.page.locator(this.passwordField).fill(this.password)
