@@ -6,13 +6,16 @@ const DEFAULT_TIMEOUT = 30000;
 
 export const initializeBrowser = async () => {
   if (!browser) {
-    browser = await chromium.launch({ headless: false });
+   // browser = await chromium.launch({ headless: false}); -- Commented by Venkatesh Bellamkonda
+   browser = await chromium.launch({ headless: false,args: ["--start-maximized"],});   // -- Added by Venkatesh Bellamkonda
   }
 };
 
 export const initializePage = async () => {
   if (browser && !page) {
-    page = await browser.newPage();
+    const context = await browser.newContext({ viewport: null });
+    page = await context.newPage(); //added by Venkatesh Bellamkonda
+    //page = await browser.newPage();   -- Commented by Venkatesh Bellamkonda
     page.setDefaultTimeout(DEFAULT_TIMEOUT);
   }
 };
@@ -31,3 +34,4 @@ export const closeBrowser = async () => {
     page = null;
   }
 };
+
