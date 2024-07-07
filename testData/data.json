@@ -1,0 +1,11 @@
+{
+    "checkoutData": [
+        {
+            "firstName": "Test",
+            "lastName": "Automation",
+            "postalCode": "12345"
+
+        }
+
+    ]
+}
