@@ -24,24 +24,20 @@ Then('I Validate all six items are sorted correctly by {string}', async function
 
   switch (sortOrder) {
     case 'Price (low to high)':
-      const sortedInventoryActual = await sortInventoryByPriceLowToHigh(inventoryDataActual);
       const sortedInventoryExpected = await sortInventoryByPriceLowToHigh(inventoryDataExpected);
-      assertArrayEquals(sortedInventoryExpected, sortedInventoryActual);
+      assertArrayEquals(sortedInventoryExpected, inventoryDataActual);
       break;
     case 'Price (high to low)':
-      const sortedInventoryActual2 = await sortInventoryByPriceHighToLow(inventoryDataActual);
       const sortedInventoryExpected2 = await sortInventoryByPriceHighToLow(inventoryDataExpected);
-      assertArrayEquals(sortedInventoryExpected2, sortedInventoryActual2);
+      assertArrayEquals(sortedInventoryExpected2, inventoryDataActual);
       break;
     case 'Name (A to Z)':
-      const sortedInventoryActual3 = await sortInventoryByNameAtoZ(inventoryDataActual);
       const sortedInventoryExpected3 = await sortInventoryByNameAtoZ(inventoryDataExpected);
-      assertArrayEquals(sortedInventoryExpected3, sortedInventoryActual3);
+      assertArrayEquals(sortedInventoryExpected3, inventoryDataActual);
       break;
     case 'Name (Z to A)':
-      const sortedInventoryActual4 = await sortInventoryByNameZtoA(inventoryDataActual);
       const sortedInventoryExpected4 = await sortInventoryByNameZtoA(inventoryDataExpected);
-      assertArrayEquals(sortedInventoryExpected4, sortedInventoryActual4);
+      assertArrayEquals(sortedInventoryExpected4, inventoryDataActual);
       break;
   }
 });
