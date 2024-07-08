@@ -1,13 +1,22 @@
-import { After, Before, setDefaultTimeout } from "@cucumber/cucumber";
-import { closeBrowser, initializeBrowser, initializePage } from "../playwrightUtilities";
+import { After, Before, setDefaultTimeout, Status } from "@cucumber/cucumber";
+import { closeBrowser, initializeBrowser, initializePage,getPage } from "../playwrightUtilities";
+import { Page } from "@playwright/test";
 
 setDefaultTimeout(15000);
+let page: Page;
 
 Before( async () => {
     await initializeBrowser();
     await initializePage();
 })
 
-After( async () => {
+
+
+After(async function(Scenario){
+    if (Scenario.result!.status == Status.FAILED){
+        page =await getPage();
+        const img = await page.screenshot({ path: `screenshots/${Scenario.pickle.name}.png`, fullPage: true})
+        this.attach(img, 'image/png')
+    }
     await closeBrowser();
 })
