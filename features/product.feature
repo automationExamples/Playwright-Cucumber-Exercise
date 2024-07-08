@@ -10,9 +10,9 @@ Feature: Product Sorting Feature
     And I click on logout
 
     Examples:
-      | sort_type           | expected_order                                                                                                                                                  |
-      | Price (high to low) | 'Sauce Labs Fleece Jacket', 'Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Bike Light', 'Test.allTheThings() T-Shirt (Red)', 'Sauce Labs Onesie' |
-      | Price (low to high) | 'Sauce Labs Onesie', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Test.allTheThings() T-Shirt (Red)', 'Sauce Labs Backpack', 'Sauce Labs Fleece Jacket' |
+      | sort_type           |                                                                                                                                                  
+      | Price (high to low) | 
+      | Price (low to high) | 
 
   Scenario Outline: Validate product sort by a to z <sort_type>
     When I will login as 'standard_user'
@@ -21,6 +21,6 @@ Feature: Product Sorting Feature
     And I click on logout
 
     Examples:
-      | sort_type | expected_order                                                                                                                                                  |
-      | Name (A to Z) | 'Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)' |
-      | Name (Z to A) | 'Test.allTheThings() T-Shirt (Red)', 'Sauce Labs Onesie', 'Sauce Labs Fleece Jacket', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Bike Light', 'Sauce Labs Backpack' |
+      | sort_type |
+      | Name (A to Z) | 
+      | Name (Z to A) | 
