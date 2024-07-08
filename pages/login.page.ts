@@ -1,26 +1,45 @@
 import { Page } from "@playwright/test"
+import { click, fillText, getText, getTitle } from "../webUtils"
+import { get } from "http"
 
 export class Login {
     private readonly page: Page
-    private readonly password: string = 'secret_sauce'
     private readonly passwordField: string = 'input[id="password"]'
     private readonly userNameField: string = 'input[id="user-name"]'
     private readonly loginButton: string = 'input[id="login-button"]'
+    private readonly errorMessage: string = 'h3[data-test="error"]'
 
     constructor(page: Page) {
         this.page = page;
     }
 
-    public async validateTitle(expectedTitle: string) {
-        const pageTitle = await this.page.title();
-        if (pageTitle !== expectedTitle) {
-          throw new Error(`Expected title to be ${expectedTitle} but found ${pageTitle}`);
-        }
+    public async enterUserName(userName: string) {
+        await fillText(this.page, this.userNameField, userName)
     }
 
-    public async loginAsUser(userName: string) {
-        await this.page.locator(this.userNameField).fill(userName)
-        await this.page.locator(this.passwordField).fill(this.password)
-        await this.page.locator(this.loginButton).click()
+    public async enterPassword(password: string) {
+        await fillText(this.page, this.passwordField, password)
     }
+
+    public async clickLoginButton() {
+        await click(this.page, this.loginButton)
+    }
+
+    public async loginAsUser(userName: string, password: string) {
+        await this.enterUserName(userName)
+        await this.enterPassword(password)
+        await this.clickLoginButton()
+    }
+
+    public async getPageTitle(): Promise<string> {
+        return getTitle(this.page)
+    }
+
+    public async getErrorMessage(): Promise<string> {
+        return getText(this.page, this.errorMessage)
+    }
+
+
+
+
 }
