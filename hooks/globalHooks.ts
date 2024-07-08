@@ -1,5 +1,6 @@
-import { After, Before, BeforeAll, setDefaultTimeout } from "@cucumber/cucumber";
-import { closeBrowser, initializeBrowser, initializePage } from "../playwrightUtilities";
+import { After, Before, BeforeAll, setDefaultTimeout, Status } from "@cucumber/cucumber";
+import { closeBrowser, initializeBrowser, initializePage,getPage } from "../playwrightUtilities";
+import { Page } from "@playwright/test";
 import Log from "../Log";
 
 setDefaultTimeout(15000);
@@ -8,16 +9,23 @@ BeforeAll( async () => {
     Log.clearLogs();
 })
 
-Before( async (scenario) => {
-    Log.testBegin(scenario.pickle.name);
+Before( async (Scenario) => {
+    Log.testBegin(Scenario.pickle.name);
     await initializeBrowser();
     await initializePage();
 })
 
-After( async (scenario) => {
-    await closeBrowser();
-    if (scenario.result) {
-        const status = scenario.result.status;
-        Log.testEnd(scenario.pickle.name, status);
+
+
+After(async function(Scenario) {
+    const status = Scenario.result!.status;
+    if (status == Status.FAILED){
+        Log.testEnd(Scenario.pickle.name, status);
+        const page = getPage();
+        this.attach(await page.screenshot({ path: `./test-results/screenshots/${Scenario}.png`, fullPage: true }), 'image/png')
     }
+    else {
+        Log.testEnd(Scenario.pickle.name, status);
+    }
+    await closeBrowser();
 })

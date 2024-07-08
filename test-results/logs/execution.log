@@ -1,0 +1,718 @@
+2024-07-08 11:47:04 info: 	##############################################################################
+2024-07-08 11:47:04 info: 	SCENARIO: VALIDATE THE LOGIN PAGE TITLE - STARTED
+2024-07-08 11:47:04 info: 	##############################################################################
+2024-07-08 11:47:08 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:47:10 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:47:10 info: 	Typing the text : standard_user in the element with selector : input[id="user-name"]
+2024-07-08 11:47:10 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:47:11 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:47:11 info: 	Typed the text : standard_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:47:11 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:47:11 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:47:11 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:47:11 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:47:11 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:47:11 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:47:12 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:47:12 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:47:12 info: 	Getting the title of the page
+2024-07-08 11:47:12 info: 	Title of the page is : Swag Labs
+2024-07-08 11:47:12 info: 	Asserting that the expected value : Swag Labs is equal to the actual value : Swag Labs
+2024-07-08 11:47:12 info: 	Expected value : Swag Labs is equal to the actual value : Swag Labs
+2024-07-08 11:47:12 info: 	##############################################################################
+2024-07-08 11:47:12 info: 	SCENARIO: VALIDATE THE LOGIN PAGE TITLE - PASSED
+2024-07-08 11:47:12 info: 	##############################################################################
+2024-07-08 11:47:14 info: 	##############################################################################
+2024-07-08 11:47:14 info: 	SCENARIO: VALIDATE LOGIN ERROR MESSAGE - STARTED
+2024-07-08 11:47:14 info: 	##############################################################################
+2024-07-08 11:47:17 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:47:19 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:47:19 info: 	Typing the text : locked_out_user in the element with selector : input[id="user-name"]
+2024-07-08 11:47:19 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:47:19 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:47:20 info: 	Typed the text : locked_out_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:47:20 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:47:20 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:47:20 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:47:20 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:47:20 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:47:20 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:47:21 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:47:21 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:47:21 info: 	Getting the text of the element with selector : h3[data-test="error"]
+2024-07-08 11:47:21 info: 	Waiting for the element with selector : h3[data-test="error"]
+2024-07-08 11:47:21 info: 	Element with selector : h3[data-test="error"] is visible
+2024-07-08 11:47:21 info: 	Text of the element with selector : h3[data-test="error"] is : Epic sadface: Sorry, this user has been locked out.
+2024-07-08 11:47:21 info: 	Asserting that the expected value : Epic sadface: Sorry, this user has been locked out. is equal to the actual value : Epic sadface: Sorry, this user has been locked out.
+2024-07-08 11:47:21 info: 	Expected value : Epic sadface: Sorry, this user has been locked out. is equal to the actual value : Epic sadface: Sorry, this user has been locked out.
+2024-07-08 11:47:21 info: 	##############################################################################
+2024-07-08 11:47:21 info: 	SCENARIO: VALIDATE LOGIN ERROR MESSAGE - PASSED
+2024-07-08 11:47:21 info: 	##############################################################################
+2024-07-08 11:47:23 info: 	##############################################################################
+2024-07-08 11:47:23 info: 	SCENARIO: SCENARIO OUTLINE NAME: VALIDATE THE LOGIN PAGE TITLE FOR ALL THE VALID USERS - STARTED
+2024-07-08 11:47:23 info: 	##############################################################################
+2024-07-08 11:47:27 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:47:28 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:47:29 info: 	Typing the text : error_user in the element with selector : input[id="user-name"]
+2024-07-08 11:47:29 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:47:29 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:47:30 info: 	Typed the text : error_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:47:30 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:47:30 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:47:30 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:47:30 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:47:30 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:47:30 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:47:30 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:47:31 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:47:31 info: 	Getting the title of the page
+2024-07-08 11:47:31 info: 	Title of the page is : Swag Labs
+2024-07-08 11:47:31 info: 	Asserting that the expected value : Swag Labs is equal to the actual value : Swag Labs
+2024-07-08 11:47:31 info: 	Expected value : Swag Labs is equal to the actual value : Swag Labs
+2024-07-08 11:47:31 info: 	Clicking on the element with selector : button[id="react-burger-menu-btn"]
+2024-07-08 11:47:31 info: 	Waiting for the element with selector : button[id="react-burger-menu-btn"]
+2024-07-08 11:47:31 info: 	Element with selector : button[id="react-burger-menu-btn"] is visible
+2024-07-08 11:47:31 info: 	Clicked on the element with selector : button[id="react-burger-menu-btn"] successfully
+2024-07-08 11:47:31 info: 	Clicking on the element with selector : a[id="logout_sidebar_link"]
+2024-07-08 11:47:31 info: 	Waiting for the element with selector : a[id="logout_sidebar_link"]
+2024-07-08 11:47:31 info: 	Element with selector : a[id="logout_sidebar_link"] is visible
+2024-07-08 11:47:32 info: 	Clicked on the element with selector : a[id="logout_sidebar_link"] successfully
+2024-07-08 11:47:32 info: 	##############################################################################
+2024-07-08 11:47:33 info: 	SCENARIO: SCENARIO OUTLINE NAME: VALIDATE THE LOGIN PAGE TITLE FOR ALL THE VALID USERS - PASSED
+2024-07-08 11:47:33 info: 	##############################################################################
+2024-07-08 11:47:35 info: 	##############################################################################
+2024-07-08 11:47:35 info: 	SCENARIO: SCENARIO OUTLINE NAME: VALIDATE THE LOGIN PAGE TITLE FOR ALL THE VALID USERS - STARTED
+2024-07-08 11:47:35 info: 	##############################################################################
+2024-07-08 11:47:38 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:47:39 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:47:40 info: 	Typing the text : problem_user in the element with selector : input[id="user-name"]
+2024-07-08 11:47:40 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:47:41 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:47:41 info: 	Typed the text : problem_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:47:41 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:47:41 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:47:41 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:47:42 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:47:42 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:47:42 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:47:42 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:47:43 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:47:43 info: 	Getting the title of the page
+2024-07-08 11:47:43 info: 	Title of the page is : Swag Labs
+2024-07-08 11:47:43 info: 	Asserting that the expected value : Swag Labs is equal to the actual value : Swag Labs
+2024-07-08 11:47:43 info: 	Expected value : Swag Labs is equal to the actual value : Swag Labs
+2024-07-08 11:47:43 info: 	Clicking on the element with selector : button[id="react-burger-menu-btn"]
+2024-07-08 11:47:43 info: 	Waiting for the element with selector : button[id="react-burger-menu-btn"]
+2024-07-08 11:47:43 info: 	Element with selector : button[id="react-burger-menu-btn"] is visible
+2024-07-08 11:47:43 info: 	Clicked on the element with selector : button[id="react-burger-menu-btn"] successfully
+2024-07-08 11:47:43 info: 	Clicking on the element with selector : a[id="logout_sidebar_link"]
+2024-07-08 11:47:43 info: 	Waiting for the element with selector : a[id="logout_sidebar_link"]
+2024-07-08 11:47:43 info: 	Element with selector : a[id="logout_sidebar_link"] is visible
+2024-07-08 11:47:44 info: 	Clicked on the element with selector : a[id="logout_sidebar_link"] successfully
+2024-07-08 11:47:44 info: 	##############################################################################
+2024-07-08 11:47:44 info: 	SCENARIO: SCENARIO OUTLINE NAME: VALIDATE THE LOGIN PAGE TITLE FOR ALL THE VALID USERS - PASSED
+2024-07-08 11:47:44 info: 	##############################################################################
+2024-07-08 11:47:45 info: 	##############################################################################
+2024-07-08 11:47:45 info: 	SCENARIO: SCENARIO OUTLINE NAME: VALIDATE THE LOGIN PAGE TITLE FOR ALL THE VALID USERS - STARTED
+2024-07-08 11:47:45 info: 	##############################################################################
+2024-07-08 11:47:49 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:47:50 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:47:50 info: 	Typing the text : visual_users in the element with selector : input[id="user-name"]
+2024-07-08 11:47:50 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:47:51 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:47:51 info: 	Typed the text : visual_users in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:47:51 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:47:51 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:47:51 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:47:52 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:47:52 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:47:52 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:47:52 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:47:52 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:47:52 info: 	Getting the title of the page
+2024-07-08 11:47:52 info: 	Title of the page is : Swag Labs
+2024-07-08 11:47:52 info: 	Asserting that the expected value : Swag Labs is equal to the actual value : Swag Labs
+2024-07-08 11:47:52 info: 	Expected value : Swag Labs is equal to the actual value : Swag Labs
+2024-07-08 11:47:52 info: 	Clicking on the element with selector : button[id="react-burger-menu-btn"]
+2024-07-08 11:47:52 info: 	Waiting for the element with selector : button[id="react-burger-menu-btn"]
+2024-07-08 11:48:07 info: 	##############################################################################
+2024-07-08 11:48:07 info: 	SCENARIO: SCENARIO OUTLINE NAME: VALIDATE THE LOGIN PAGE TITLE FOR ALL THE VALID USERS - FAILED
+2024-07-08 11:48:07 info: 	##############################################################################
+2024-07-08 11:48:08 error: 	Element with selector : button[id="react-burger-menu-btn"] is not visible
+2024-07-08 11:48:08 error: 	Error while clicking on the element with selector : button[id="react-burger-menu-btn"]
+2024-07-08 11:48:10 info: 	##############################################################################
+2024-07-08 11:48:10 info: 	SCENARIO: VALIDATE PRODUCT SORT BY PRICE - STARTED
+2024-07-08 11:48:10 info: 	##############################################################################
+2024-07-08 11:48:13 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:48:15 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:48:15 info: 	Typing the text : standard_user in the element with selector : input[id="user-name"]
+2024-07-08 11:48:15 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:48:16 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:48:16 info: 	Typed the text : standard_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:48:16 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:48:16 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:48:16 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:48:17 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:48:17 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:48:17 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:48:17 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:48:17 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:48:17 info: 	Selecting the value : Price (low to high) from the dropdown with selector : select[data-test="product-sort-container"]
+2024-07-08 11:48:17 info: 	Waiting for the element with selector : select[data-test="product-sort-container"]
+2024-07-08 11:48:17 info: 	Element with selector : select[data-test="product-sort-container"] is visible
+2024-07-08 11:48:17 info: 	Selected the value : Price (low to high) from the dropdown with selector : select[data-test="product-sort-container"]
+2024-07-08 11:48:17 info: 	Getting all the elements with selector : div[data-test="inventory-item-name"]
+2024-07-08 11:48:18 info: 	Got all the elements with selector : div[data-test="inventory-item-name"]
+2024-07-08 11:48:18 info: 	Getting all the elements with selector : div[data-test="inventory-item-price"]
+2024-07-08 11:48:18 info: 	Got all the elements with selector : div[data-test="inventory-item-price"]
+2024-07-08 11:48:18 info: 	Sorted the inventory by price low to high : [{"name":"Sauce Labs Onesie","price":7.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Fleece Jacket","price":49.99}]
+2024-07-08 11:48:18 info: 	Sorted the inventory by price low to high : [{"name":"Sauce Labs Onesie","price":7.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Fleece Jacket","price":49.99}]
+2024-07-08 11:48:18 info: 	Asserting that the expected array : [{"name":"Sauce Labs Onesie","price":7.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Fleece Jacket","price":49.99}] is equal to the actual array : [{"name":"Sauce Labs Onesie","price":7.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Fleece Jacket","price":49.99}]
+2024-07-08 11:48:18 info: 	Expected array : [{"name":"Sauce Labs Onesie","price":7.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Fleece Jacket","price":49.99}] is equal to the actual array : [{"name":"Sauce Labs Onesie","price":7.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Fleece Jacket","price":49.99}]
+2024-07-08 11:48:18 info: 	##############################################################################
+2024-07-08 11:48:18 info: 	SCENARIO: VALIDATE PRODUCT SORT BY PRICE - PASSED
+2024-07-08 11:48:18 info: 	##############################################################################
+2024-07-08 11:48:19 info: 	##############################################################################
+2024-07-08 11:48:19 info: 	SCENARIO: VALIDATE PRODUCT SORT BY PRICE - STARTED
+2024-07-08 11:48:19 info: 	##############################################################################
+2024-07-08 11:48:23 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:48:24 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:48:24 info: 	Typing the text : standard_user in the element with selector : input[id="user-name"]
+2024-07-08 11:48:24 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:48:25 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:48:25 info: 	Typed the text : standard_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:48:25 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:48:25 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:48:25 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:48:26 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:48:26 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:48:26 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:48:26 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:48:26 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:48:26 info: 	Selecting the value : Price (high to low) from the dropdown with selector : select[data-test="product-sort-container"]
+2024-07-08 11:48:26 info: 	Waiting for the element with selector : select[data-test="product-sort-container"]
+2024-07-08 11:48:26 info: 	Element with selector : select[data-test="product-sort-container"] is visible
+2024-07-08 11:48:27 info: 	Selected the value : Price (high to low) from the dropdown with selector : select[data-test="product-sort-container"]
+2024-07-08 11:48:27 info: 	Getting all the elements with selector : div[data-test="inventory-item-name"]
+2024-07-08 11:48:27 info: 	Got all the elements with selector : div[data-test="inventory-item-name"]
+2024-07-08 11:48:27 info: 	Getting all the elements with selector : div[data-test="inventory-item-price"]
+2024-07-08 11:48:27 info: 	Got all the elements with selector : div[data-test="inventory-item-price"]
+2024-07-08 11:48:27 info: 	Sorted the inventory by price high to low : [{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Onesie","price":7.99}]
+2024-07-08 11:48:27 info: 	Sorted the inventory by price high to low : [{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Onesie","price":7.99}]
+2024-07-08 11:48:27 info: 	Asserting that the expected array : [{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Onesie","price":7.99}] is equal to the actual array : [{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Onesie","price":7.99}]
+2024-07-08 11:48:27 info: 	Expected array : [{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Onesie","price":7.99}] is equal to the actual array : [{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Onesie","price":7.99}]
+2024-07-08 11:48:27 info: 	##############################################################################
+2024-07-08 11:48:27 info: 	SCENARIO: VALIDATE PRODUCT SORT BY PRICE - PASSED
+2024-07-08 11:48:27 info: 	##############################################################################
+2024-07-08 11:48:29 info: 	##############################################################################
+2024-07-08 11:48:29 info: 	SCENARIO: VALIDATE PRODUCT SORT BY NAME - STARTED
+2024-07-08 11:48:29 info: 	##############################################################################
+2024-07-08 11:48:33 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:48:34 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:48:35 info: 	Typing the text : standard_user in the element with selector : input[id="user-name"]
+2024-07-08 11:48:35 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:48:35 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:48:36 info: 	Typed the text : standard_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:48:36 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:48:36 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:48:36 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:48:36 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:48:36 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:48:36 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:48:36 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:48:37 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:48:37 info: 	Selecting the value : Name (A to Z) from the dropdown with selector : select[data-test="product-sort-container"]
+2024-07-08 11:48:37 info: 	Waiting for the element with selector : select[data-test="product-sort-container"]
+2024-07-08 11:48:37 info: 	Element with selector : select[data-test="product-sort-container"] is visible
+2024-07-08 11:48:37 info: 	Selected the value : Name (A to Z) from the dropdown with selector : select[data-test="product-sort-container"]
+2024-07-08 11:48:37 info: 	Getting all the elements with selector : div[data-test="inventory-item-name"]
+2024-07-08 11:48:37 info: 	Got all the elements with selector : div[data-test="inventory-item-name"]
+2024-07-08 11:48:37 info: 	Getting all the elements with selector : div[data-test="inventory-item-price"]
+2024-07-08 11:48:37 info: 	Got all the elements with selector : div[data-test="inventory-item-price"]
+2024-07-08 11:48:38 info: 	Sorted the inventory by name A to Z : [{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Onesie","price":7.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99}]
+2024-07-08 11:48:38 info: 	Sorted the inventory by name A to Z : [{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Onesie","price":7.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99}]
+2024-07-08 11:48:38 info: 	Asserting that the expected array : [{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Onesie","price":7.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99}] is equal to the actual array : [{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Onesie","price":7.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99}]
+2024-07-08 11:48:38 info: 	Expected array : [{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Onesie","price":7.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99}] is equal to the actual array : [{"name":"Sauce Labs Backpack","price":29.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Onesie","price":7.99},{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99}]
+2024-07-08 11:48:38 info: 	##############################################################################
+2024-07-08 11:48:38 info: 	SCENARIO: VALIDATE PRODUCT SORT BY NAME - PASSED
+2024-07-08 11:48:38 info: 	##############################################################################
+2024-07-08 11:48:39 info: 	##############################################################################
+2024-07-08 11:48:39 info: 	SCENARIO: VALIDATE PRODUCT SORT BY NAME - STARTED
+2024-07-08 11:48:39 info: 	##############################################################################
+2024-07-08 11:48:43 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:48:44 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:48:45 info: 	Typing the text : standard_user in the element with selector : input[id="user-name"]
+2024-07-08 11:48:45 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:48:46 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:48:46 info: 	Typed the text : standard_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:48:46 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:48:46 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:48:46 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:48:46 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:48:46 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:48:46 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:48:47 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:48:47 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:48:47 info: 	Selecting the value : Name (Z to A) from the dropdown with selector : select[data-test="product-sort-container"]
+2024-07-08 11:48:47 info: 	Waiting for the element with selector : select[data-test="product-sort-container"]
+2024-07-08 11:48:47 info: 	Element with selector : select[data-test="product-sort-container"] is visible
+2024-07-08 11:48:48 info: 	Selected the value : Name (Z to A) from the dropdown with selector : select[data-test="product-sort-container"]
+2024-07-08 11:48:48 info: 	Getting all the elements with selector : div[data-test="inventory-item-name"]
+2024-07-08 11:48:48 info: 	Got all the elements with selector : div[data-test="inventory-item-name"]
+2024-07-08 11:48:48 info: 	Getting all the elements with selector : div[data-test="inventory-item-price"]
+2024-07-08 11:48:48 info: 	Got all the elements with selector : div[data-test="inventory-item-price"]
+2024-07-08 11:48:49 info: 	Sorted the inventory by name Z to A : [{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Onesie","price":7.99},{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Backpack","price":29.99}]
+2024-07-08 11:48:49 info: 	Sorted the inventory by name Z to A : [{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Onesie","price":7.99},{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Backpack","price":29.99}]
+2024-07-08 11:48:49 info: 	Asserting that the expected array : [{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Onesie","price":7.99},{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Backpack","price":29.99}] is equal to the actual array : [{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Onesie","price":7.99},{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Backpack","price":29.99}]
+2024-07-08 11:48:49 info: 	Expected array : [{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Onesie","price":7.99},{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Backpack","price":29.99}] is equal to the actual array : [{"name":"Test.allTheThings() T-Shirt (Red)","price":15.99},{"name":"Sauce Labs Onesie","price":7.99},{"name":"Sauce Labs Fleece Jacket","price":49.99},{"name":"Sauce Labs Bolt T-Shirt","price":15.99},{"name":"Sauce Labs Bike Light","price":9.99},{"name":"Sauce Labs Backpack","price":29.99}]
+2024-07-08 11:48:49 info: 	##############################################################################
+2024-07-08 11:48:49 info: 	SCENARIO: VALIDATE PRODUCT SORT BY NAME - PASSED
+2024-07-08 11:48:49 info: 	##############################################################################
+2024-07-08 11:48:51 info: 	##############################################################################
+2024-07-08 11:48:51 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT - STARTED
+2024-07-08 11:48:51 info: 	##############################################################################
+2024-07-08 11:48:54 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:48:56 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:48:56 info: 	Typing the text : standard_user in the element with selector : input[id="user-name"]
+2024-07-08 11:48:56 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:48:57 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:48:57 info: 	Typed the text : standard_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:48:57 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:48:57 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:48:57 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:48:57 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:48:57 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:48:57 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:48:58 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:48:58 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:48:59 info: 	Clicking on the element with selector : button[id="add-to-cart-sauce-labs-backpack"]
+2024-07-08 11:48:59 info: 	Waiting for the element with selector : button[id="add-to-cart-sauce-labs-backpack"]
+2024-07-08 11:48:59 info: 	Element with selector : button[id="add-to-cart-sauce-labs-backpack"] is visible
+2024-07-08 11:48:59 info: 	Clicked on the element with selector : button[id="add-to-cart-sauce-labs-backpack"] successfully
+2024-07-08 11:48:59 info: 	Clicking on the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:48:59 info: 	Waiting for the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:48:59 info: 	Element with selector : a[data-test="shopping-cart-link"] is visible
+2024-07-08 11:49:00 info: 	Clicked on the element with selector : a[data-test="shopping-cart-link"] successfully
+2024-07-08 11:49:00 info: 	Clicking on the element with selector : button[id="checkout"]
+2024-07-08 11:49:00 info: 	Waiting for the element with selector : button[id="checkout"]
+2024-07-08 11:49:00 info: 	Element with selector : button[id="checkout"] is visible
+2024-07-08 11:49:00 info: 	Clicked on the element with selector : button[id="checkout"] successfully
+2024-07-08 11:49:00 info: 	Typing the text : John in the element with selector : input[id="first-name"]
+2024-07-08 11:49:00 info: 	Waiting for the element with selector : input[id="first-name"]
+2024-07-08 11:49:00 info: 	Element with selector : input[id="first-name"] is visible
+2024-07-08 11:49:00 info: 	Typed the text : John in the element with selector : input[id="first-name"] successfully
+2024-07-08 11:49:00 info: 	Typing the text : Doe in the element with selector : input[id="last-name"]
+2024-07-08 11:49:00 info: 	Waiting for the element with selector : input[id="last-name"]
+2024-07-08 11:49:00 info: 	Element with selector : input[id="last-name"] is visible
+2024-07-08 11:49:00 info: 	Typed the text : Doe in the element with selector : input[id="last-name"] successfully
+2024-07-08 11:49:00 info: 	Typing the text : 12345 in the element with selector : input[id="postal-code"]
+2024-07-08 11:49:00 info: 	Waiting for the element with selector : input[id="postal-code"]
+2024-07-08 11:49:01 info: 	Element with selector : input[id="postal-code"] is visible
+2024-07-08 11:49:01 info: 	Typed the text : 12345 in the element with selector : input[id="postal-code"] successfully
+2024-07-08 11:49:01 info: 	Clicking on the element with selector : input[id="continue"]
+2024-07-08 11:49:01 info: 	Waiting for the element with selector : input[id="continue"]
+2024-07-08 11:49:01 info: 	Element with selector : input[id="continue"] is visible
+2024-07-08 11:49:01 info: 	Clicked on the element with selector : input[id="continue"] successfully
+2024-07-08 11:49:01 info: 	Clicking on the element with selector : button[id="finish"]
+2024-07-08 11:49:01 info: 	Waiting for the element with selector : button[id="finish"]
+2024-07-08 11:49:01 info: 	Element with selector : button[id="finish"] is visible
+2024-07-08 11:49:01 info: 	Clicked on the element with selector : button[id="finish"] successfully
+2024-07-08 11:49:01 info: 	Getting the text of the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:49:01 info: 	Waiting for the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:49:01 info: 	Element with selector : h2[data-test="complete-header"] is visible
+2024-07-08 11:49:01 info: 	Text of the element with selector : h2[data-test="complete-header"] is : Thank you for your order!
+2024-07-08 11:49:01 info: 	Asserting that the expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:49:01 info: 	Expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:49:01 info: 	##############################################################################
+2024-07-08 11:49:01 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT - PASSED
+2024-07-08 11:49:01 info: 	##############################################################################
+2024-07-08 11:49:03 info: 	##############################################################################
+2024-07-08 11:49:03 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR EACH ITEM - STARTED
+2024-07-08 11:49:03 info: 	##############################################################################
+2024-07-08 11:49:06 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:49:07 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:49:07 info: 	Typing the text : standard_user in the element with selector : input[id="user-name"]
+2024-07-08 11:49:07 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:49:08 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:49:08 info: 	Typed the text : standard_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:49:08 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:49:08 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:49:08 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:49:08 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:49:08 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:49:08 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:49:08 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:49:09 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:49:09 info: 	Clicking on the element with selector : button[id="add-to-cart-sauce-labs-backpack"]
+2024-07-08 11:49:09 info: 	Waiting for the element with selector : button[id="add-to-cart-sauce-labs-backpack"]
+2024-07-08 11:49:09 info: 	Element with selector : button[id="add-to-cart-sauce-labs-backpack"] is visible
+2024-07-08 11:49:09 info: 	Clicked on the element with selector : button[id="add-to-cart-sauce-labs-backpack"] successfully
+2024-07-08 11:49:09 info: 	Clicking on the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:49:09 info: 	Waiting for the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:49:09 info: 	Element with selector : a[data-test="shopping-cart-link"] is visible
+2024-07-08 11:49:09 info: 	Clicked on the element with selector : a[data-test="shopping-cart-link"] successfully
+2024-07-08 11:49:09 info: 	Clicking on the element with selector : button[id="checkout"]
+2024-07-08 11:49:09 info: 	Waiting for the element with selector : button[id="checkout"]
+2024-07-08 11:49:10 info: 	Element with selector : button[id="checkout"] is visible
+2024-07-08 11:49:10 info: 	Clicked on the element with selector : button[id="checkout"] successfully
+2024-07-08 11:49:10 info: 	Typing the text : John in the element with selector : input[id="first-name"]
+2024-07-08 11:49:10 info: 	Waiting for the element with selector : input[id="first-name"]
+2024-07-08 11:49:10 info: 	Element with selector : input[id="first-name"] is visible
+2024-07-08 11:49:10 info: 	Typed the text : John in the element with selector : input[id="first-name"] successfully
+2024-07-08 11:49:10 info: 	Typing the text : Doe in the element with selector : input[id="last-name"]
+2024-07-08 11:49:10 info: 	Waiting for the element with selector : input[id="last-name"]
+2024-07-08 11:49:10 info: 	Element with selector : input[id="last-name"] is visible
+2024-07-08 11:49:10 info: 	Typed the text : Doe in the element with selector : input[id="last-name"] successfully
+2024-07-08 11:49:10 info: 	Typing the text : 12345 in the element with selector : input[id="postal-code"]
+2024-07-08 11:49:10 info: 	Waiting for the element with selector : input[id="postal-code"]
+2024-07-08 11:49:10 info: 	Element with selector : input[id="postal-code"] is visible
+2024-07-08 11:49:10 info: 	Typed the text : 12345 in the element with selector : input[id="postal-code"] successfully
+2024-07-08 11:49:10 info: 	Clicking on the element with selector : input[id="continue"]
+2024-07-08 11:49:10 info: 	Waiting for the element with selector : input[id="continue"]
+2024-07-08 11:49:10 info: 	Element with selector : input[id="continue"] is visible
+2024-07-08 11:49:10 info: 	Clicked on the element with selector : input[id="continue"] successfully
+2024-07-08 11:49:10 info: 	Clicking on the element with selector : button[id="finish"]
+2024-07-08 11:49:10 info: 	Waiting for the element with selector : button[id="finish"]
+2024-07-08 11:49:10 info: 	Element with selector : button[id="finish"] is visible
+2024-07-08 11:49:11 info: 	Clicked on the element with selector : button[id="finish"] successfully
+2024-07-08 11:49:11 info: 	Getting the text of the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:49:11 info: 	Waiting for the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:49:11 info: 	Element with selector : h2[data-test="complete-header"] is visible
+2024-07-08 11:49:11 info: 	Text of the element with selector : h2[data-test="complete-header"] is : Thank you for your order!
+2024-07-08 11:49:11 info: 	Asserting that the expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:49:11 info: 	Expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:49:11 info: 	##############################################################################
+2024-07-08 11:49:11 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR EACH ITEM - PASSED
+2024-07-08 11:49:11 info: 	##############################################################################
+2024-07-08 11:49:12 info: 	##############################################################################
+2024-07-08 11:49:12 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR EACH ITEM - STARTED
+2024-07-08 11:49:12 info: 	##############################################################################
+2024-07-08 11:49:16 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:49:17 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:49:18 info: 	Typing the text : standard_user in the element with selector : input[id="user-name"]
+2024-07-08 11:49:18 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:49:18 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:49:18 info: 	Typed the text : standard_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:49:18 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:49:18 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:49:19 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:49:19 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:49:19 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:49:19 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:49:19 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:49:20 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:49:20 info: 	Clicking on the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:49:20 info: 	Waiting for the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:49:20 info: 	Element with selector : a[data-test="shopping-cart-link"] is visible
+2024-07-08 11:49:21 info: 	Clicked on the element with selector : a[data-test="shopping-cart-link"] successfully
+2024-07-08 11:49:21 info: 	Clicking on the element with selector : button[id="checkout"]
+2024-07-08 11:49:21 info: 	Waiting for the element with selector : button[id="checkout"]
+2024-07-08 11:49:21 info: 	Element with selector : button[id="checkout"] is visible
+2024-07-08 11:49:21 info: 	Clicked on the element with selector : button[id="checkout"] successfully
+2024-07-08 11:49:21 info: 	Typing the text : John in the element with selector : input[id="first-name"]
+2024-07-08 11:49:21 info: 	Waiting for the element with selector : input[id="first-name"]
+2024-07-08 11:49:21 info: 	Element with selector : input[id="first-name"] is visible
+2024-07-08 11:49:21 info: 	Typed the text : John in the element with selector : input[id="first-name"] successfully
+2024-07-08 11:49:21 info: 	Typing the text : Doe in the element with selector : input[id="last-name"]
+2024-07-08 11:49:21 info: 	Waiting for the element with selector : input[id="last-name"]
+2024-07-08 11:49:21 info: 	Element with selector : input[id="last-name"] is visible
+2024-07-08 11:49:21 info: 	Typed the text : Doe in the element with selector : input[id="last-name"] successfully
+2024-07-08 11:49:21 info: 	Typing the text : 12345 in the element with selector : input[id="postal-code"]
+2024-07-08 11:49:21 info: 	Waiting for the element with selector : input[id="postal-code"]
+2024-07-08 11:49:21 info: 	Element with selector : input[id="postal-code"] is visible
+2024-07-08 11:49:22 info: 	Typed the text : 12345 in the element with selector : input[id="postal-code"] successfully
+2024-07-08 11:49:22 info: 	Clicking on the element with selector : input[id="continue"]
+2024-07-08 11:49:22 info: 	Waiting for the element with selector : input[id="continue"]
+2024-07-08 11:49:22 info: 	Element with selector : input[id="continue"] is visible
+2024-07-08 11:49:22 info: 	Clicked on the element with selector : input[id="continue"] successfully
+2024-07-08 11:49:22 info: 	Clicking on the element with selector : button[id="finish"]
+2024-07-08 11:49:22 info: 	Waiting for the element with selector : button[id="finish"]
+2024-07-08 11:49:22 info: 	Element with selector : button[id="finish"] is visible
+2024-07-08 11:49:22 info: 	Clicked on the element with selector : button[id="finish"] successfully
+2024-07-08 11:49:22 info: 	Getting the text of the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:49:22 info: 	Waiting for the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:49:22 info: 	Element with selector : h2[data-test="complete-header"] is visible
+2024-07-08 11:49:22 info: 	Text of the element with selector : h2[data-test="complete-header"] is : Thank you for your order!
+2024-07-08 11:49:22 info: 	Asserting that the expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:49:22 info: 	Expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:49:22 info: 	##############################################################################
+2024-07-08 11:49:22 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR EACH ITEM - PASSED
+2024-07-08 11:49:22 info: 	##############################################################################
+2024-07-08 11:49:25 info: 	##############################################################################
+2024-07-08 11:49:25 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR EACH ITEM - STARTED
+2024-07-08 11:49:25 info: 	##############################################################################
+2024-07-08 11:49:27 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:49:28 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:49:29 info: 	Typing the text : standard_user in the element with selector : input[id="user-name"]
+2024-07-08 11:49:29 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:49:29 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:49:29 info: 	Typed the text : standard_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:49:29 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:49:29 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:49:30 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:49:30 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:49:30 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:49:30 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:49:30 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:49:30 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:49:30 info: 	Clicking on the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:49:30 info: 	Waiting for the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:49:30 info: 	Element with selector : a[data-test="shopping-cart-link"] is visible
+2024-07-08 11:49:31 info: 	Clicked on the element with selector : a[data-test="shopping-cart-link"] successfully
+2024-07-08 11:49:31 info: 	Clicking on the element with selector : button[id="checkout"]
+2024-07-08 11:49:31 info: 	Waiting for the element with selector : button[id="checkout"]
+2024-07-08 11:49:31 info: 	Element with selector : button[id="checkout"] is visible
+2024-07-08 11:49:31 info: 	Clicked on the element with selector : button[id="checkout"] successfully
+2024-07-08 11:49:31 info: 	Typing the text : John in the element with selector : input[id="first-name"]
+2024-07-08 11:49:31 info: 	Waiting for the element with selector : input[id="first-name"]
+2024-07-08 11:49:31 info: 	Element with selector : input[id="first-name"] is visible
+2024-07-08 11:49:31 info: 	Typed the text : John in the element with selector : input[id="first-name"] successfully
+2024-07-08 11:49:31 info: 	Typing the text : Doe in the element with selector : input[id="last-name"]
+2024-07-08 11:49:31 info: 	Waiting for the element with selector : input[id="last-name"]
+2024-07-08 11:49:32 info: 	Element with selector : input[id="last-name"] is visible
+2024-07-08 11:49:32 info: 	Typed the text : Doe in the element with selector : input[id="last-name"] successfully
+2024-07-08 11:49:32 info: 	Typing the text : 12345 in the element with selector : input[id="postal-code"]
+2024-07-08 11:49:32 info: 	Waiting for the element with selector : input[id="postal-code"]
+2024-07-08 11:49:32 info: 	Element with selector : input[id="postal-code"] is visible
+2024-07-08 11:49:32 info: 	Typed the text : 12345 in the element with selector : input[id="postal-code"] successfully
+2024-07-08 11:49:32 info: 	Clicking on the element with selector : input[id="continue"]
+2024-07-08 11:49:32 info: 	Waiting for the element with selector : input[id="continue"]
+2024-07-08 11:49:32 info: 	Element with selector : input[id="continue"] is visible
+2024-07-08 11:49:32 info: 	Clicked on the element with selector : input[id="continue"] successfully
+2024-07-08 11:49:32 info: 	Clicking on the element with selector : button[id="finish"]
+2024-07-08 11:49:32 info: 	Waiting for the element with selector : button[id="finish"]
+2024-07-08 11:49:32 info: 	Element with selector : button[id="finish"] is visible
+2024-07-08 11:49:32 info: 	Clicked on the element with selector : button[id="finish"] successfully
+2024-07-08 11:49:32 info: 	Getting the text of the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:49:32 info: 	Waiting for the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:49:32 info: 	Element with selector : h2[data-test="complete-header"] is visible
+2024-07-08 11:49:32 info: 	Text of the element with selector : h2[data-test="complete-header"] is : Thank you for your order!
+2024-07-08 11:49:32 info: 	Asserting that the expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:49:32 info: 	Expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:49:32 info: 	##############################################################################
+2024-07-08 11:49:32 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR EACH ITEM - PASSED
+2024-07-08 11:49:33 info: 	##############################################################################
+2024-07-08 11:49:34 info: 	##############################################################################
+2024-07-08 11:49:34 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR EACH ITEM - STARTED
+2024-07-08 11:49:34 info: 	##############################################################################
+2024-07-08 11:49:38 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:49:40 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:49:40 info: 	Typing the text : standard_user in the element with selector : input[id="user-name"]
+2024-07-08 11:49:40 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:49:41 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:49:41 info: 	Typed the text : standard_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:49:41 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:49:41 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:49:41 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:49:41 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:49:41 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:49:41 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:49:41 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:49:43 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:49:43 info: 	Clicking on the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:49:43 info: 	Waiting for the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:49:43 info: 	Element with selector : a[data-test="shopping-cart-link"] is visible
+2024-07-08 11:49:43 info: 	Clicked on the element with selector : a[data-test="shopping-cart-link"] successfully
+2024-07-08 11:49:43 info: 	Clicking on the element with selector : button[id="checkout"]
+2024-07-08 11:49:43 info: 	Waiting for the element with selector : button[id="checkout"]
+2024-07-08 11:49:43 info: 	Element with selector : button[id="checkout"] is visible
+2024-07-08 11:49:43 info: 	Clicked on the element with selector : button[id="checkout"] successfully
+2024-07-08 11:49:44 info: 	Typing the text : John in the element with selector : input[id="first-name"]
+2024-07-08 11:49:44 info: 	Waiting for the element with selector : input[id="first-name"]
+2024-07-08 11:49:44 info: 	Element with selector : input[id="first-name"] is visible
+2024-07-08 11:49:44 info: 	Typed the text : John in the element with selector : input[id="first-name"] successfully
+2024-07-08 11:49:44 info: 	Typing the text : Doe in the element with selector : input[id="last-name"]
+2024-07-08 11:49:44 info: 	Waiting for the element with selector : input[id="last-name"]
+2024-07-08 11:49:44 info: 	Element with selector : input[id="last-name"] is visible
+2024-07-08 11:49:44 info: 	Typed the text : Doe in the element with selector : input[id="last-name"] successfully
+2024-07-08 11:49:44 info: 	Typing the text : 12345 in the element with selector : input[id="postal-code"]
+2024-07-08 11:49:44 info: 	Waiting for the element with selector : input[id="postal-code"]
+2024-07-08 11:49:45 info: 	Element with selector : input[id="postal-code"] is visible
+2024-07-08 11:49:45 info: 	Typed the text : 12345 in the element with selector : input[id="postal-code"] successfully
+2024-07-08 11:49:45 info: 	Clicking on the element with selector : input[id="continue"]
+2024-07-08 11:49:45 info: 	Waiting for the element with selector : input[id="continue"]
+2024-07-08 11:49:45 info: 	Element with selector : input[id="continue"] is visible
+2024-07-08 11:49:45 info: 	Clicked on the element with selector : input[id="continue"] successfully
+2024-07-08 11:49:45 info: 	Clicking on the element with selector : button[id="finish"]
+2024-07-08 11:49:45 info: 	Waiting for the element with selector : button[id="finish"]
+2024-07-08 11:49:45 info: 	Element with selector : button[id="finish"] is visible
+2024-07-08 11:49:45 info: 	Clicked on the element with selector : button[id="finish"] successfully
+2024-07-08 11:49:45 info: 	Getting the text of the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:49:45 info: 	Waiting for the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:49:45 info: 	Element with selector : h2[data-test="complete-header"] is visible
+2024-07-08 11:49:45 info: 	Text of the element with selector : h2[data-test="complete-header"] is : Thank you for your order!
+2024-07-08 11:49:45 info: 	Asserting that the expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:49:45 info: 	Expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:49:45 info: 	##############################################################################
+2024-07-08 11:49:45 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR EACH ITEM - PASSED
+2024-07-08 11:49:45 info: 	##############################################################################
+2024-07-08 11:49:47 info: 	##############################################################################
+2024-07-08 11:49:47 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR EACH ITEM - STARTED
+2024-07-08 11:49:47 info: 	##############################################################################
+2024-07-08 11:49:51 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:49:52 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:49:52 info: 	Typing the text : standard_user in the element with selector : input[id="user-name"]
+2024-07-08 11:49:52 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:49:53 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:49:53 info: 	Typed the text : standard_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:49:53 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:49:53 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:49:53 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:49:54 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:49:54 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:49:54 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:49:54 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:49:55 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:49:55 info: 	Clicking on the element with selector : button[id="add-to-cart-sauce-labs-onesie"]
+2024-07-08 11:49:55 info: 	Waiting for the element with selector : button[id="add-to-cart-sauce-labs-onesie"]
+2024-07-08 11:49:55 info: 	Element with selector : button[id="add-to-cart-sauce-labs-onesie"] is visible
+2024-07-08 11:49:55 info: 	Clicked on the element with selector : button[id="add-to-cart-sauce-labs-onesie"] successfully
+2024-07-08 11:49:55 info: 	Clicking on the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:49:55 info: 	Waiting for the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:49:55 info: 	Element with selector : a[data-test="shopping-cart-link"] is visible
+2024-07-08 11:49:55 info: 	Clicked on the element with selector : a[data-test="shopping-cart-link"] successfully
+2024-07-08 11:49:55 info: 	Clicking on the element with selector : button[id="checkout"]
+2024-07-08 11:49:55 info: 	Waiting for the element with selector : button[id="checkout"]
+2024-07-08 11:49:56 info: 	Element with selector : button[id="checkout"] is visible
+2024-07-08 11:49:56 info: 	Clicked on the element with selector : button[id="checkout"] successfully
+2024-07-08 11:49:56 info: 	Typing the text : John in the element with selector : input[id="first-name"]
+2024-07-08 11:49:56 info: 	Waiting for the element with selector : input[id="first-name"]
+2024-07-08 11:49:56 info: 	Element with selector : input[id="first-name"] is visible
+2024-07-08 11:49:56 info: 	Typed the text : John in the element with selector : input[id="first-name"] successfully
+2024-07-08 11:49:56 info: 	Typing the text : Doe in the element with selector : input[id="last-name"]
+2024-07-08 11:49:56 info: 	Waiting for the element with selector : input[id="last-name"]
+2024-07-08 11:49:56 info: 	Element with selector : input[id="last-name"] is visible
+2024-07-08 11:49:56 info: 	Typed the text : Doe in the element with selector : input[id="last-name"] successfully
+2024-07-08 11:49:56 info: 	Typing the text : 12345 in the element with selector : input[id="postal-code"]
+2024-07-08 11:49:56 info: 	Waiting for the element with selector : input[id="postal-code"]
+2024-07-08 11:49:56 info: 	Element with selector : input[id="postal-code"] is visible
+2024-07-08 11:49:56 info: 	Typed the text : 12345 in the element with selector : input[id="postal-code"] successfully
+2024-07-08 11:49:56 info: 	Clicking on the element with selector : input[id="continue"]
+2024-07-08 11:49:56 info: 	Waiting for the element with selector : input[id="continue"]
+2024-07-08 11:49:56 info: 	Element with selector : input[id="continue"] is visible
+2024-07-08 11:49:56 info: 	Clicked on the element with selector : input[id="continue"] successfully
+2024-07-08 11:49:56 info: 	Clicking on the element with selector : button[id="finish"]
+2024-07-08 11:49:56 info: 	Waiting for the element with selector : button[id="finish"]
+2024-07-08 11:49:56 info: 	Element with selector : button[id="finish"] is visible
+2024-07-08 11:49:57 info: 	Clicked on the element with selector : button[id="finish"] successfully
+2024-07-08 11:49:57 info: 	Getting the text of the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:49:57 info: 	Waiting for the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:49:57 info: 	Element with selector : h2[data-test="complete-header"] is visible
+2024-07-08 11:49:57 info: 	Text of the element with selector : h2[data-test="complete-header"] is : Thank you for your order!
+2024-07-08 11:49:57 info: 	Asserting that the expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:49:57 info: 	Expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:49:57 info: 	##############################################################################
+2024-07-08 11:49:57 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR EACH ITEM - PASSED
+2024-07-08 11:49:57 info: 	##############################################################################
+2024-07-08 11:49:58 info: 	##############################################################################
+2024-07-08 11:49:58 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR EACH ITEM - STARTED
+2024-07-08 11:49:58 info: 	##############################################################################
+2024-07-08 11:50:01 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:50:02 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:50:02 info: 	Typing the text : standard_user in the element with selector : input[id="user-name"]
+2024-07-08 11:50:02 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:50:04 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:50:04 info: 	Typed the text : standard_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:50:04 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:50:04 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:50:04 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:50:04 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:50:04 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:50:04 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:50:04 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:50:05 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:50:05 info: 	Clicking on the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:50:05 info: 	Waiting for the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:50:05 info: 	Element with selector : a[data-test="shopping-cart-link"] is visible
+2024-07-08 11:50:05 info: 	Clicked on the element with selector : a[data-test="shopping-cart-link"] successfully
+2024-07-08 11:50:05 info: 	Clicking on the element with selector : button[id="checkout"]
+2024-07-08 11:50:05 info: 	Waiting for the element with selector : button[id="checkout"]
+2024-07-08 11:50:06 info: 	Element with selector : button[id="checkout"] is visible
+2024-07-08 11:50:06 info: 	Clicked on the element with selector : button[id="checkout"] successfully
+2024-07-08 11:50:06 info: 	Typing the text : John in the element with selector : input[id="first-name"]
+2024-07-08 11:50:06 info: 	Waiting for the element with selector : input[id="first-name"]
+2024-07-08 11:50:06 info: 	Element with selector : input[id="first-name"] is visible
+2024-07-08 11:50:06 info: 	Typed the text : John in the element with selector : input[id="first-name"] successfully
+2024-07-08 11:50:06 info: 	Typing the text : Doe in the element with selector : input[id="last-name"]
+2024-07-08 11:50:06 info: 	Waiting for the element with selector : input[id="last-name"]
+2024-07-08 11:50:06 info: 	Element with selector : input[id="last-name"] is visible
+2024-07-08 11:50:06 info: 	Typed the text : Doe in the element with selector : input[id="last-name"] successfully
+2024-07-08 11:50:06 info: 	Typing the text : 12345 in the element with selector : input[id="postal-code"]
+2024-07-08 11:50:06 info: 	Waiting for the element with selector : input[id="postal-code"]
+2024-07-08 11:50:06 info: 	Element with selector : input[id="postal-code"] is visible
+2024-07-08 11:50:07 info: 	Typed the text : 12345 in the element with selector : input[id="postal-code"] successfully
+2024-07-08 11:50:07 info: 	Clicking on the element with selector : input[id="continue"]
+2024-07-08 11:50:07 info: 	Waiting for the element with selector : input[id="continue"]
+2024-07-08 11:50:07 info: 	Element with selector : input[id="continue"] is visible
+2024-07-08 11:50:07 info: 	Clicked on the element with selector : input[id="continue"] successfully
+2024-07-08 11:50:07 info: 	Clicking on the element with selector : button[id="finish"]
+2024-07-08 11:50:07 info: 	Waiting for the element with selector : button[id="finish"]
+2024-07-08 11:50:07 info: 	Element with selector : button[id="finish"] is visible
+2024-07-08 11:50:07 info: 	Clicked on the element with selector : button[id="finish"] successfully
+2024-07-08 11:50:07 info: 	Getting the text of the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:50:07 info: 	Waiting for the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:50:07 info: 	Element with selector : h2[data-test="complete-header"] is visible
+2024-07-08 11:50:07 info: 	Text of the element with selector : h2[data-test="complete-header"] is : Thank you for your order!
+2024-07-08 11:50:07 info: 	Asserting that the expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:50:07 info: 	Expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:50:07 info: 	##############################################################################
+2024-07-08 11:50:07 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR EACH ITEM - PASSED
+2024-07-08 11:50:07 info: 	##############################################################################
+2024-07-08 11:50:09 info: 	##############################################################################
+2024-07-08 11:50:09 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR MULTIPLE ITEMS - STARTED
+2024-07-08 11:50:09 info: 	##############################################################################
+2024-07-08 11:50:13 info: 	Navigating to the url : https://www.saucedemo.com/
+2024-07-08 11:50:14 info: 	Navigated to the url : https://www.saucedemo.com/ successfully
+2024-07-08 11:50:15 info: 	Typing the text : standard_user in the element with selector : input[id="user-name"]
+2024-07-08 11:50:15 info: 	Waiting for the element with selector : input[id="user-name"]
+2024-07-08 11:50:15 info: 	Element with selector : input[id="user-name"] is visible
+2024-07-08 11:50:15 info: 	Typed the text : standard_user in the element with selector : input[id="user-name"] successfully
+2024-07-08 11:50:15 info: 	Typing the text : secret_sauce in the element with selector : input[id="password"]
+2024-07-08 11:50:15 info: 	Waiting for the element with selector : input[id="password"]
+2024-07-08 11:50:15 info: 	Element with selector : input[id="password"] is visible
+2024-07-08 11:50:15 info: 	Typed the text : secret_sauce in the element with selector : input[id="password"] successfully
+2024-07-08 11:50:15 info: 	Clicking on the element with selector : input[id="login-button"]
+2024-07-08 11:50:15 info: 	Waiting for the element with selector : input[id="login-button"]
+2024-07-08 11:50:16 info: 	Element with selector : input[id="login-button"] is visible
+2024-07-08 11:50:16 info: 	Clicked on the element with selector : input[id="login-button"] successfully
+2024-07-08 11:50:16 info: 	Clicking on the element with selector : button[id="add-to-cart-sauce-labs-backpack"]
+2024-07-08 11:50:16 info: 	Waiting for the element with selector : button[id="add-to-cart-sauce-labs-backpack"]
+2024-07-08 11:50:16 info: 	Element with selector : button[id="add-to-cart-sauce-labs-backpack"] is visible
+2024-07-08 11:50:16 info: 	Clicked on the element with selector : button[id="add-to-cart-sauce-labs-backpack"] successfully
+2024-07-08 11:50:16 info: 	Clicking on the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:50:16 info: 	Waiting for the element with selector : a[data-test="shopping-cart-link"]
+2024-07-08 11:50:16 info: 	Element with selector : a[data-test="shopping-cart-link"] is visible
+2024-07-08 11:50:17 info: 	Clicked on the element with selector : a[data-test="shopping-cart-link"] successfully
+2024-07-08 11:50:17 info: 	Clicking on the element with selector : button[id="checkout"]
+2024-07-08 11:50:17 info: 	Waiting for the element with selector : button[id="checkout"]
+2024-07-08 11:50:17 info: 	Element with selector : button[id="checkout"] is visible
+2024-07-08 11:50:17 info: 	Clicked on the element with selector : button[id="checkout"] successfully
+2024-07-08 11:50:18 info: 	Typing the text : John in the element with selector : input[id="first-name"]
+2024-07-08 11:50:18 info: 	Waiting for the element with selector : input[id="first-name"]
+2024-07-08 11:50:18 info: 	Element with selector : input[id="first-name"] is visible
+2024-07-08 11:50:18 info: 	Typed the text : John in the element with selector : input[id="first-name"] successfully
+2024-07-08 11:50:18 info: 	Typing the text : Doe in the element with selector : input[id="last-name"]
+2024-07-08 11:50:18 info: 	Waiting for the element with selector : input[id="last-name"]
+2024-07-08 11:50:18 info: 	Element with selector : input[id="last-name"] is visible
+2024-07-08 11:50:18 info: 	Typed the text : Doe in the element with selector : input[id="last-name"] successfully
+2024-07-08 11:50:18 info: 	Typing the text : 12345 in the element with selector : input[id="postal-code"]
+2024-07-08 11:50:18 info: 	Waiting for the element with selector : input[id="postal-code"]
+2024-07-08 11:50:18 info: 	Element with selector : input[id="postal-code"] is visible
+2024-07-08 11:50:18 info: 	Typed the text : 12345 in the element with selector : input[id="postal-code"] successfully
+2024-07-08 11:50:18 info: 	Clicking on the element with selector : input[id="continue"]
+2024-07-08 11:50:18 info: 	Waiting for the element with selector : input[id="continue"]
+2024-07-08 11:50:18 info: 	Element with selector : input[id="continue"] is visible
+2024-07-08 11:50:18 info: 	Clicked on the element with selector : input[id="continue"] successfully
+2024-07-08 11:50:18 info: 	Clicking on the element with selector : button[id="finish"]
+2024-07-08 11:50:18 info: 	Waiting for the element with selector : button[id="finish"]
+2024-07-08 11:50:19 info: 	Element with selector : button[id="finish"] is visible
+2024-07-08 11:50:19 info: 	Clicked on the element with selector : button[id="finish"] successfully
+2024-07-08 11:50:19 info: 	Getting the text of the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:50:19 info: 	Waiting for the element with selector : h2[data-test="complete-header"]
+2024-07-08 11:50:19 info: 	Element with selector : h2[data-test="complete-header"] is visible
+2024-07-08 11:50:19 info: 	Text of the element with selector : h2[data-test="complete-header"] is : Thank you for your order!
+2024-07-08 11:50:19 info: 	Asserting that the expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:50:19 info: 	Expected value : Thank you for your order! is equal to the actual value : Thank you for your order!
+2024-07-08 11:50:19 info: 	##############################################################################
+2024-07-08 11:50:19 info: 	SCENARIO: VALIDATE SUCCESSFUL PURCHASE TEXT FOR MULTIPLE ITEMS - PASSED
+2024-07-08 11:50:19 info: 	##############################################################################

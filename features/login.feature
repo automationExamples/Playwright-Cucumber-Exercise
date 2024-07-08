@@ -21,5 +21,5 @@ Feature: Login Feature
             | user         |
             | error_user   |
             | problem_user |
-            | visual_user  |
+            | visual_users |
 
