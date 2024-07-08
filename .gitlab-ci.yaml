@@ -1,0 +1,57 @@
+stages:
+  - install
+  - test
+  - report
+  - deploy
+
+variables:
+  NODE_IMAGE: "node:14"  
+
+cache:
+  paths:
+    - node_modules/ 
+
+install_dependencies:
+  stage: install
+  image: $NODE_IMAGE
+  script:
+    - npm install 
+  artifacts:
+    paths:
+      - node_modules/  
+    expire_in: 1 week 
+
+run_tests:
+  stage: test
+  image: $NODE_IMAGE
+  script:
+    - npm test  
+  artifacts:
+    paths:
+      - cucumber_report.html  
+      - report.json  
+  when: always  
+  allow_failure: false  
+
+generate_report:
+  stage: report
+  image: $NODE_IMAGE
+  script:
+    - npm run report  
+  artifacts:
+    paths:
+      - cucumber_report.html  
+    expire_in: 1 week  
+  only:
+    - main  
+
+pages:
+  stage: deploy
+  script:
+    - mkdir .public  
+    - mv cucumber_report.html .public/index.html  
+  artifacts:
+    paths:
+      - .public  
+  only:
+    - main  
