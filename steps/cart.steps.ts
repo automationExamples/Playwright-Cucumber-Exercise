@@ -1,13 +1,14 @@
 import { When, Then } from '@cucumber/cucumber';
 import { Cart } from '../pages/cart.page';
 import { getPage } from '../playwrightUtilities';
+import { jsonData } from '../testData/checkOutData.json';
 
 When('I select checkout', async () => {
     await new Cart(getPage()).clickOnCheckout();
 });
 
-When('I enter the firstName {string} lastName {string} and postalcode {string}', async (firstName, lastName, postalCode) => {
-    await new Cart(getPage()).enterInformationDetails(firstName, lastName, postalCode);
+When('I enter the firstName,lastName and postalcode', async () => {
+    await new Cart(getPage()).enterInformationDetails(jsonData[0].firstName, jsonData[0].lastName,jsonData[0].postalCode);
 });
 
 When('I select continue', async () => {
