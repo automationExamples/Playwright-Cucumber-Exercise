@@ -8,5 +8,8 @@ Then('I will add the backpack to the cart', async () => {
 
 When('I Sort the items by {string}', async (sortOption: string) => {
   await new Product(getPage()).selectOption(sortOption);
-  await new Product(getPage()).verifySortOrder(sortOption);
+});
+When('Validate all the items are sorted correctly by {string}', async (sortOption: string) => {
+  const itemPrices = await new Product(getPage()).retrieveItemPrices();
+  await new Product(getPage()).verifySortOrder(sortOption, itemPrices);
 });

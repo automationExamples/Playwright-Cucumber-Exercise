@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test"
+import {expect, Page} from "@playwright/test"
 
 export class Product {
     private readonly page: Page
@@ -26,20 +26,37 @@ export class Product {
     }
 
 
-    async verifySortOrder(sortOption: string) {
+    async retrieveItemPrices() {
         const priceElements = await this.page.$$(this.priceElementSelector);
-        console.log(priceElements)
-        const prices: string[] = [];
+        const prices = [];
         for (const element of priceElements) {
             const priceText = await element.innerText();
             prices.push(priceText);
         }
-        console.log('Prices found on the page:', prices);
-        // Pending TODO
-        // if sortOption == "Price(Low to High)"
-        // verify the order
-        // if sortOption == "Price(Low to High)"
-        // verify the order
-
+        let formattedPrices: number[];
+        formattedPrices = prices.map(price => parseFloat(price.replace('$', '')));
+        return formattedPrices
     }
+
+    async verifySortOrder(sortOption: string, itemPrices: number[]) {
+        // console.log(itemPrices)
+        console.log('sort option is' + sortOption)
+
+        if (sortOption == "Price (low to high)") {
+            const isPriceLowToHigh = itemPrices.every((value, index, array) => {
+                return index === 0 || array[index - 1] <= value;
+            });
+            console.log('low to high')
+            expect(isPriceLowToHigh).toBe(true)
+        }
+
+        if (sortOption == "Price (high to low)") {
+            const isPriceHighToLow = itemPrices.every((value, index, array) => {
+                return index === 0 || array[index - 1] >= value;
+            });
+            console.log('high to low')
+            expect(isPriceHighToLow).toBe(true)
+        }
+    }
+
 }
