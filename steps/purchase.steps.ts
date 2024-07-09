@@ -1,6 +1,7 @@
 import { Then } from '@cucumber/cucumber';
 import { getPage } from '../playwrightUtilities';
 import { Purchase } from '../pages/purchase.page';
+const {expect} = require('@playwright/test')
 
 Then('I will add the backpack to the cart for purchase', async () => {
   await new Purchase(getPage()).addBackPackToCart();
@@ -38,8 +39,9 @@ Then('I will Select Finish', async () => {
   await new Purchase(getPage()).select_Finish();
 });
 
-Then('I will Validate the text "Thank you for your order!"', async () => {
+Then('I will Validate the confirmation message element {string}', async (expected_message : string) => {
   await new Purchase(getPage()).validate_Text();
+  
 });
 
 function async(String: StringConstructor, firstName: any, String1: StringConstructor, lastName: any, String2: StringConstructor, zipCode: any): import("@cucumber/cucumber/lib/support_code_library_builder/types").IDefineStepOptions {

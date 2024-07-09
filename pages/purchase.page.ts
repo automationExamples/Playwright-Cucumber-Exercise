@@ -8,9 +8,9 @@ export class Purchase {
     public readonly firstName: string = 'input[id="first-name"]'
     public readonly lastName: string = 'input[id="last-name"]'
     public readonly zipCode: string = 'input[id="postal-code"]'
-    public readonly selectContinue: string = 'button[id="continue"]'
-    public readonly selectFinish: string = 'icon[id="finish"]'
-    public readonly validateText: string = 'Thank you for your order!'
+    public readonly selectContinue: string = 'input[id="continue"]'
+    public readonly selectFinish: string = 'button[id="finish"]'
+    public readonly validateText: string = 'h2[class="complete-header"]'
 
 
     constructor(page: Page) {

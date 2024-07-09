@@ -22,5 +22,5 @@ Feature: Purchase Feature
     # TODO: Select Finish
     And I will Select Finish
 
-    # TODO: Validate the text 'Thank you for your order!'
-    Then I will Validate the confirmation message 'Thank you for your order!'
+    # TODO: Validate the textElement 'Thank you for your order!'
+    Then I will Validate the confirmation message element "Thank you for your order!"
