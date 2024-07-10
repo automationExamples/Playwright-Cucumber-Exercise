@@ -6,6 +6,7 @@ export class Product {
     private readonly chooseCart: string = 'shopping_cart_badge'
     private readonly sortElement: string = 'select[class="product_sort_container"]'
     private readonly priceElementSelector: string = '.inventory_item_price[data-test="inventory-item-price"]';
+    private readonly nameElementSelector: string = '.inventory_item_name[data-test="inventory-item-name"]';
 
 
     constructor(page: Page) {
@@ -38,7 +39,18 @@ export class Product {
         return formattedPrices
     }
 
-    async verifySortOrder(sortOption: string, itemPrices: number[]) {
+    async retrieveItemNames() {
+        const nameElements = await this.page.$$(this.nameElementSelector);
+        const names: string[] = [];
+        for (const element of nameElements) {
+            const nameText = await element.innerText();
+            names.push(nameText);
+        }
+        console.log(names)
+        return names
+    }
+
+    async verifySortOrderByPrice(sortOption: string, itemPrices: number[]) {
         // console.log(itemPrices)
         console.log('sort option is' + sortOption)
 
@@ -56,6 +68,35 @@ export class Product {
             });
             console.log('high to low')
             expect(isPriceHighToLow).toBe(true)
+        }
+    }
+
+    async isSortedAToZ(names: string[]) {
+        for (let i = 1; i < names.length; i++) {
+            if (names[i - 1].localeCompare(names[i]) > 0) {
+                console.log('items are sorted from A To Z')
+                return false;
+            }
+        }
+        return true;
+    }
+
+    async isSortedZToA(names: string[]) {
+        for (let i = 1; i < names.length; i++) {
+            if (names[i - 1].localeCompare(names[i]) < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    async verifySortOrderByName(sortOption: string, itemNames: string[]) {
+        console.log(sortOption)
+        if (sortOption == "Name (A to Z)") {
+            expect(await this.isSortedAToZ(itemNames)).toBe(true)
+        }
+        if (sortOption == "Name (Z to A)") {
+            expect(await this.isSortedZToA(itemNames)).toBe(true)
         }
     }
 
