@@ -4,9 +4,12 @@ Feature: Login Feature
     Given I open the "https://www.saucedemo.com/" page
 
   Scenario: Validate the login page title
-    # TODO: Fix this failing scenario
-    Then I should see the title "Labs Swag"
+    # TODO: Fix this failing scenario 
+    # typo in string corrected for problem 1
+    Then I should see the title "Swag Labs"
 
   Scenario: Validate login error message
     Then I will login as 'locked_out_user'
-    # TODO: Add a step to validate the error message received
+    # TODO: Add a step to validate the error message received 
+    # assertion step added for problem 2
+    Then I should see the error 'Epic sadface: Sorry, this user has been locked out.'
