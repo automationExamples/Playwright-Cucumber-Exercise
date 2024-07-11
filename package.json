@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "cucumber-js --format json:report.json --exit",
-    "report": "node generate-report.js"
+    "report": "ts-node generate-report.ts"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^10.0.1",
