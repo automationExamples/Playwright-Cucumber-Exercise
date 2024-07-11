@@ -10,7 +10,6 @@ Then('I will login as {string}', async (userName) => {
   await new Login(getPage()).loginAsUser(userName);
 });
 
-// step def added for problem 2
-Then('I should see the error {string}', async (expectedErrorMessage) => {
-  await new Login(getPage()).validateErrorMessage(expectedErrorMessage);
+Then('I should see the error message {string}', async (errorMessage) => {
+  await new Login(getPage()).validateErrorMessage(errorMessage);
 });
