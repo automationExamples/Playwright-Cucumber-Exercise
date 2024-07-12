@@ -1,7 +1,7 @@
 Feature: Login Feature
 
   Background:
-    Given I open the login page "https://www.saucedemo.com/"
+    Given I open the common "https://www.saucedemo.com/" page
 
   Scenario: Validate the login page title
     Then I should see the title "Swag Labs"

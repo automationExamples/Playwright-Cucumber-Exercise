@@ -2,11 +2,6 @@ import {Given, Then} from '@cucumber/cucumber';
 import {getPage} from '../playwrightUtilities';
 import {Login} from '../pages/login.page';
 
-Given('I open the login page {string}', async (url: string) => {
-    const page = getPage();
-    await page.goto(url);
-});
-
 Then('I should see the title {string}', async (expectedTitle: string) => {
     const page = getPage();
     const login = new Login(page);

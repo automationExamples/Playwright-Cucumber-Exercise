@@ -1,7 +1,7 @@
 Feature: Purchase Feature
 
   Background:
-    Given I open the login page "https://www.saucedemo.com/"
+    Given I open the common "https://www.saucedemo.com/" page
 
   Scenario:  Validate successful purchase text
     Then I will login as 'standard_user'

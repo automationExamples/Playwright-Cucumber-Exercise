@@ -19,7 +19,7 @@ Then('I select Checkout', async () => {
   await checkout.selectCheckout();
 });
 
-Then('I fill in the First Name as {string}, Last Name as {string}, and Zip/Postal Code as {string}', async (firstName, lastName, zipCode) => {
+Then('I fill in the First Name as {string}, Last Name as {string}, and Zip\\/Postal Code as {string}', async (firstName: string, lastName: string, zipCode: string) => {
   const checkout = new Checkout(getPage());
   await checkout.fillInDetails(firstName, lastName, zipCode);
 });
@@ -40,7 +40,3 @@ Then('I validate the text {string}', async (expectedText) => {
   expect(actualText).toEqual(expectedText);
 });
 
-Then('I fill in the First Name as {string}, Last Name as {string}, and Zip\\/Postal Code as {string}', async (firstName: string, lastName: string, zipCode: string) => {
-  const checkout = new Checkout(getPage());
-  await checkout.fillInDetails(firstName, lastName, zipCode);
-});

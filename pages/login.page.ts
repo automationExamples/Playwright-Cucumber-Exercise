@@ -14,7 +14,7 @@ export class Login {
     public async validateTitle(expectedTitle: string) {
         const pageTitle = await this.page.title();
         if (pageTitle !== expectedTitle) {
-          throw new Error(`Expected title to be ${expectedTitle} but found ${pageTitle}`);
+            throw new Error(`Expected title to be ${expectedTitle} but found ${pageTitle}`);
         }
     }
 
@@ -24,9 +24,8 @@ export class Login {
         await this.page.locator(this.loginButton).click()
     }
 
-    // created this function to validate error messages on login page
-    async validateErrorMessage(expectedErrorMessage: string): Promise<void> {
-    const errorMessage = await this.page.locator('h3[data-test="error"]').innerText();
-    expect(errorMessage).toContain(expectedErrorMessage);
-}
+    public async validateErrorMessage(expectedErrorMessage: string): Promise<void> {
+        const errorMessage = await this.page.locator('h3[data-test="error"]').innerText();
+        expect(errorMessage).toContain(expectedErrorMessage);
+    }
 }
