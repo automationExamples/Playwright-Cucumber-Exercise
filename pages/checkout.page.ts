@@ -20,11 +20,6 @@ export class Checkout {
   }
 
   public async validateCheckoutComplete(text: string) {
-    expect(this.page.getByText(text));
-  }
-
-  public async btnClick(text: string, url: string) {
-    await this.page.getByRole("button", { name: `${text}` }).click();
-    await expect(this.page).toHaveURL(url);
+    await expect(this.page.getByText(text)).toBeVisible();
   }
 }

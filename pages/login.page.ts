@@ -14,15 +14,6 @@ export class Login {
     this.loginBtn = page.getByRole("button", { name: "Login" });
   }
 
-  public async validateTitle(expectedTitle: string) {
-    const pageTitle = await this.page.title();
-    if (pageTitle !== expectedTitle) {
-      throw new Error(
-        `Expected title to be ${expectedTitle} but found ${pageTitle}`
-      );
-    }
-  }
-
   public async loginAsUser(userName: string) {
     await this.userNameField.fill(userName);
     await this.passwordField.fill(this.password);
@@ -30,10 +21,10 @@ export class Login {
   }
 
   public async validateLoginError() {
-    expect(
+    await expect(
       this.page.getByText(
-        "Username and password do not match any user in this service"
+        "Sorry, this user has been locked out."
       )
-    );
+    ).toBeVisible();
   }
 }

@@ -1,12 +1,10 @@
-import { Locator, Page, expect } from "@playwright/test";
+import { Page, expect } from "@playwright/test";
 
 export class Product {
   private readonly page: Page;
-  private readonly miniCart: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    this.miniCart = page.locator('[data-test="shopping-cart-link"]');
   }
 
   public async addItemToCart(name: string) {
@@ -18,16 +16,6 @@ export class Product {
     ).toContainText("1");
   }
 
-  public async clickOnMiniCart() {
-    await this.miniCart.click();
-    await expect(this.page).toHaveURL("https://www.saucedemo.com/cart.html");
-  }
-
-  public async btnClick(text: string, url: string) {
-    await this.page.getByRole("button", { name: `${text}` }).click();
-    await expect(this.page).toHaveURL(url);
-  }
-
   public async sortItemsBy(sort: string) {
     await this.page
       .locator('[data-test="product-sort-container"]')
@@ -35,10 +23,6 @@ export class Product {
   }
 
   public async sortedItemValidation(sort: string) {
-    await this.page
-      .locator('[data-test="product-sort-container"]')
-      .selectOption(sort);
-
     let sortedPrices = await this.page
       .locator('[data-test="inventory-item-price"]')
       .allTextContents();
@@ -48,8 +32,8 @@ export class Product {
     const sortedPricesNumbersCopy = [...sortedPricesNumbers];
     if (sort === "hilo") {
       sortedPricesNumbersCopy.sort((a, b) => b + a);
-    } else {
-      sortedPricesNumbersCopy.sort((a, b) => b - a);
+    } else if (sort === "lohi") {
+      sortedPricesNumbersCopy.sort((a, b) => a - b);
     }
     expect(sortedPricesNumbers).toEqual(sortedPricesNumbersCopy);
   }
