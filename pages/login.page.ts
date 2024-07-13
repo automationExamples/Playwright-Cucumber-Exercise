@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test"
+import { expect , Page } from "@playwright/test"
 
 export class Login {
     private readonly page: Page
@@ -17,6 +17,12 @@ export class Login {
           throw new Error(`Expected title to be ${expectedTitle} but found ${pageTitle}`);
         }
     }
+
+    public async validateError(errorMsg: string) {
+        const errorMessage = await this.page.locator("h3[data-test='error']").allTextContents();
+        expect(errorMessage).toContain(errorMsg);
+    }
+
 
     public async loginAsUser(userName: string) {
         await this.page.locator(this.userNameField).fill(userName)
