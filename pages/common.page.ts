@@ -13,6 +13,10 @@ export class Common {
     await this.page.getByRole("button", { name: `${text}` }).click();
   }
 
+  public async clickOnMiniCart() {
+    await this.miniCart.click();
+  }
+
   public async validateTitle(expectedTitle: string) {
     const pageTitle = await this.page.title();
     if (pageTitle !== expectedTitle) {
@@ -20,11 +24,6 @@ export class Common {
         `Expected title to be ${expectedTitle} but found ${pageTitle}`
       );
     }
-  }
-
-  public async clickOnMiniCart() {
-    await this.miniCart.click();
-    await expect(this.page).toHaveURL("https://www.saucedemo.com/cart.html");
   }
 
   public async validateUrl(url: string) {

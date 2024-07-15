@@ -10,4 +10,5 @@ Feature: Product Feature
 
     Examples:
       | sort |
+      | hilo |
       | lohi |

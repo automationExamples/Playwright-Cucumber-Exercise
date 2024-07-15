@@ -14,10 +14,10 @@ Then("Select the mini cart in header", async () => {
   await new Common(getPage()).clickOnMiniCart();
 });
 
-Then("Validate url {string}", async (url: string) => {
-  await new Common(getPage()).validateUrl(url);
-});
-
 Then("Select {string} btn", async (text: string) => {
   await new Common(getPage()).btnClick(text);
+});
+
+Then("Validate url {string}", async (url: string) => {
+  await new Common(getPage()).validateUrl(url);
 });

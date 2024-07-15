@@ -31,7 +31,7 @@ export class Product {
     );
     const sortedPricesNumbersCopy = [...sortedPricesNumbers];
     if (sort === "hilo") {
-      sortedPricesNumbersCopy.sort((a, b) => b + a);
+      sortedPricesNumbersCopy.sort((a, b) => b - a);
     } else if (sort === "lohi") {
       sortedPricesNumbersCopy.sort((a, b) => a - b);
     }
