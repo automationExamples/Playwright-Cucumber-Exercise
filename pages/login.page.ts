@@ -1,14 +1,16 @@
 import { Page } from "@playwright/test"
+import { Base } from '../pages/base';
 
-export class Login {
-    private readonly page: Page
+export class Login extends Base{
+    //private readonly page: Page
     private readonly password: string = 'secret_sauce'
     private readonly passwordField: string = 'input[id="password"]'
     private readonly userNameField: string = 'input[id="user-name"]'
     private readonly loginButton: string = 'input[id="login-button"]'
+    private readonly errorMessageText: string= 'h3[data-test="error"]'
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
     }
 
     public async validateTitle(expectedTitle: string) {
@@ -19,8 +21,12 @@ export class Login {
     }
 
     public async loginAsUser(userName: string) {
-        await this.page.locator(this.userNameField).fill(userName)
-        await this.page.locator(this.passwordField).fill(this.password)
-        await this.page.locator(this.loginButton).click()
+        await this.fill(this.userNameField,userName)
+        await this.fill(this.passwordField,this.password)
+        await this.click(this.loginButton)
+    }
+
+    public async verifyErrorMessage(expectedErrorMessage: string) {
+        await this.validateMessage(this.errorMessageText, expectedErrorMessage)
     }
 }
