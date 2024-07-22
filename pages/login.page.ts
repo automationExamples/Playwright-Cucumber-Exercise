@@ -23,4 +23,19 @@ export class Login {
         await this.page.locator(this.passwordField).fill(this.password)
         await this.page.locator(this.loginButton).click()
     }
+
+    public async validateErrorMessage(expectedErrorMessage: string) {
+        const errorMessageLocator = this.page.locator('h3[data-test="error"]');
+        try {
+            await errorMessageLocator.waitFor({ state: 'visible' });
+            const actualErrorMessage = await errorMessageLocator.textContent();
+            if (!actualErrorMessage || !actualErrorMessage.includes(expectedErrorMessage)) {
+                throw new Error(`Expected error message to contain "${expectedErrorMessage}" but found "${actualErrorMessage}"`);
+            }
+        } catch (error) {
+            // Ensure error is of type Error
+            const err: Error = error as Error;
+            throw new Error(`Error occurred: ${err.message}`);
+        }
+    }
 }

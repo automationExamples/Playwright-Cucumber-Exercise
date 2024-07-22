@@ -9,3 +9,7 @@ Then('I should see the title {string}', async (expectedTitle) => {
 Then('I will login as {string}', async (userName) => {
   await new Login(getPage()).loginAsUser(userName);
 });
+
+Then('I should see the error message {string}', async (expectedErrorMessage) => {
+  await new Login(getPage()).validateErrorMessage(expectedErrorMessage);
+});
