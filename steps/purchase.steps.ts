@@ -21,3 +21,7 @@ Then('Select Checkout', async () => {
   Then('Validate the text {string}', async (string) => {
     await new Purchase(getPage()).successMessage();
   });
+
+  Then('remove the item from the cart', async ()=> {
+    await new Purchase(getPage()).removeButton();
+  });

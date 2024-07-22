@@ -8,6 +8,7 @@ private readonly lastName = 'input[id="last-name"]'
 private readonly zipCode = 'input[id="postal-code"]'
 private readonly continueBtn = 'input[id="continue"]'
 private readonly finishBtn = 'button[id="finish"]'
+private readonly removeBtn = 'button[id="remove-sauce-labs-backpack"]'
 private readonly firstNameTxt: string = 'abc'
 private readonly lastNameTxt: string = 'xyz'
 private readonly zipCodeNum: string = '27140'
@@ -27,16 +28,20 @@ public async checkoutInfo() {
 }
 
 public async continueButton() {
-    await this.page.locator(this.continueBtn).click()
+    await this.page.locator(this.continueBtn).click();
 }
 
 public async finishButton() {
-    await this.page.locator(this.finishBtn).click()
+    await this.page.locator(this.finishBtn).click();
 }
 
 public async successMessage() {
     const successMsg = await this.page.textContent('.complete-header');
     expect(successMsg).toBe('Thank you for your order!');
+}
+
+public async removeButton(){
+    await this.page.locator(this.removeBtn).click();
 }
 
 }

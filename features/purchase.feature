@@ -13,4 +13,8 @@ Feature: Purchase Feature
   Then Select Finish
   Then Validate the text 'Thank you for your order!'
 
-   
+   Scenario:  Validate successful purchase text
+  Then I will login as 'standard_user'
+  Then I will add the backpack to the cart
+  Then Select the cart (top-right)
+  Then remove the item from the cart
