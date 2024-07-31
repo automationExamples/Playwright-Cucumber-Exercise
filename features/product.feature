@@ -12,3 +12,5 @@ Feature: Product Feature
       | sort |
       | hilo |
       | lohi |
+      | az   |
+      | za   |

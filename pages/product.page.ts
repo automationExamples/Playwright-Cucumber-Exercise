@@ -23,18 +23,29 @@ export class Product {
   }
 
   public async sortedItemValidation(sort: string) {
-    let sortedPrices = await this.page
-      .locator('[data-test="inventory-item-price"]')
-      .allTextContents();
-    const sortedPricesNumbers = sortedPrices.map((price) =>
-      parseFloat(price.replace("$", ""))
-    );
-    const sortedPricesNumbersCopy = [...sortedPricesNumbers];
-    if (sort === "hilo") {
-      sortedPricesNumbersCopy.sort((a, b) => b - a);
-    } else if (sort === "lohi") {
-      sortedPricesNumbersCopy.sort((a, b) => a - b);
+    if (sort === "az" || sort === "za") {
+      let sortedItems = await this.page
+        .locator('[data-test="inventory-item-name"]')
+        .allTextContents();
+      const sortedItemsCopy = [...sortedItems].sort((a, b) =>
+        a.localeCompare(b)
+      );
+      if (sort === "za") {
+        sortedItemsCopy.reverse();
+      }
+      expect(sortedItems).toEqual(sortedItemsCopy);
     }
-    expect(sortedPricesNumbers).toEqual(sortedPricesNumbersCopy);
+    if (sort === "hilo" || sort === "lohi") {
+      let sortedPrices = await this.page
+        .locator('[data-test="inventory-item-price"]')
+        .allTextContents();
+      const sortedPricesNumbers = sortedPrices.map((price) =>
+        parseFloat(price.replace("$", ""))
+      );
+      const sortedPricesNumbersCopy = [...sortedPricesNumbers].sort((a, b) =>
+        sort === "hilo" ? b - a : a - b
+      );
+      expect(sortedPricesNumbers).toEqual(sortedPricesNumbersCopy);
+    }
   }
 }
