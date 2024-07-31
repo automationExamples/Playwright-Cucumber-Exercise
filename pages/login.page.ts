@@ -1,26 +1,30 @@
-import { Page } from "@playwright/test"
+import { Locator, Page, expect } from "@playwright/test";
 
 export class Login {
-    private readonly page: Page
-    private readonly password: string = 'secret_sauce'
-    private readonly passwordField: string = 'input[id="password"]'
-    private readonly userNameField: string = 'input[id="user-name"]'
-    private readonly loginButton: string = 'input[id="login-button"]'
+  private readonly page: Page;
+  private readonly password: string = "secret_sauce";
+  private readonly passwordField: Locator;
+  private readonly userNameField: Locator;
+  private readonly loginBtn: Locator;
 
-    constructor(page: Page) {
-        this.page = page;
-    }
+  constructor(page: Page) {
+    this.page = page;
+    this.passwordField = page.getByRole("textbox", { name: "password" });
+    this.userNameField = page.getByRole("textbox", { name: "username" });
+    this.loginBtn = page.getByRole("button", { name: "Login" });
+  }
 
-    public async validateTitle(expectedTitle: string) {
-        const pageTitle = await this.page.title();
-        if (pageTitle !== expectedTitle) {
-          throw new Error(`Expected title to be ${expectedTitle} but found ${pageTitle}`);
-        }
-    }
+  public async loginAsUser(userName: string) {
+    await this.userNameField.fill(userName);
+    await this.passwordField.fill(this.password);
+    await this.loginBtn.click();
+  }
 
-    public async loginAsUser(userName: string) {
-        await this.page.locator(this.userNameField).fill(userName)
-        await this.page.locator(this.passwordField).fill(this.password)
-        await this.page.locator(this.loginButton).click()
-    }
+  public async validateLoginError() {
+    await expect(
+      this.page.getByText(
+        "Sorry, this user has been locked out."
+      )
+    ).toBeVisible();
+  }
 }
