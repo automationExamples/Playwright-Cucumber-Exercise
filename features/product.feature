@@ -1,13 +1,26 @@
-Feature: Product Feature
+Feature: Product Sorting Feature
 
   Background:
     Given I open the "https://www.saucedemo.com/" page
 
-  # Create a datatable to validate the Price (high to low) and Price (low to high) sort options (top-right) using a Scenario Outline
-  Scenario Outline:  Validate product sort by price <sort>
-  Then I will login as 'standard_user'
-    # TODO: Sort the items by <sort>
-    # TODO: Validate all 6 items are sorted correctly by price
-  Examples:
-    # TODO: extend the datatable to paramterize this test
-    | sort |
+  Scenario Outline: Validate product sort by price <sort_type>
+    When I will login as 'standard_user'
+    And I sort the items by "<sort_type>"
+    Then I validate all items are correctly sorted by "<sort_type>"
+    And I click on logout
+
+    Examples:
+      | sort_type           |                                                                                                                                                  
+      | Price (high to low) | 
+      | Price (low to high) | 
+
+  Scenario Outline: Validate product sort by a to z <sort_type>
+    When I will login as 'standard_user'
+    And I sort the items by "<sort_type>"
+    Then I validate all items are correctly sorted by "<sort_type>"
+    And I click on logout
+
+    Examples:
+      | sort_type |
+      | Name (A to Z) | 
+      | Name (Z to A) | 
