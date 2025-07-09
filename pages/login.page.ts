@@ -6,6 +6,7 @@ export class Login {
     private readonly passwordField: string = 'input[id="password"]'
     private readonly userNameField: string = 'input[id="user-name"]'
     private readonly loginButton: string = 'input[id="login-button"]'
+    private readonly errorMessage: string = '[data-test="error"]';
 
     constructor(page: Page) {
         this.page = page;
@@ -22,5 +23,9 @@ export class Login {
         await this.page.locator(this.userNameField).fill(userName)
         await this.page.locator(this.passwordField).fill(this.password)
         await this.page.locator(this.loginButton).click()
+    }
+
+    public async getErrorMessage(): Promise<string> {
+        return await this.page.locator(this.errorMessage).innerText();
     }
 }
