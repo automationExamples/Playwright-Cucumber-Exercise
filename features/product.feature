@@ -3,11 +3,18 @@ Feature: Product Feature
   Background:
     Given I open the "https://www.saucedemo.com/" page
 
-  # Create a datatable to validate the Price (high to low) and Price (low to high) sort options (top-right) using a Scenario Outline
-  Scenario Outline:  Validate product sort by price <sort>
-  Then I will login as 'standard_user'
-    # TODO: Sort the items by <sort>
-    # TODO: Validate all 6 items are sorted correctly by price
-  Examples:
-    # TODO: extend the datatable to paramterize this test
-    | sort |
+  Scenario Outline: Validate product sort by price
+    Then I will login as 'standard_user'
+    Then I sort products by "<sortOption>"
+    Then the first product displayed should be "<expectedTopProduct>"
+    Then the last product displayed should be "<expectedLastProduct>"
+
+    Examples:
+      | sortOption           | expectedTopProduct         | expectedLastProduct        |
+      | Price (low to high)  | Sauce Labs Onesie          | Sauce Labs Fleece Jacket   |
+      | Price (high to low)  | Sauce Labs Fleece Jacket   | Sauce Labs Onesie          |
+
+  Scenario: Validate cart icon shows correct item count
+    Then I will login as 'standard_user'
+    Then I will add the backpack to the cart
+    Then the cart icon should show "1"
