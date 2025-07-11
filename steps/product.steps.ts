@@ -21,3 +21,9 @@ Then('the last product displayed should be {string}', async (expectedName: strin
   const productPage = new Product(getPage());
   await productPage.validateLastProduct(expectedName);
 });
+
+Then('the cart icon should show {string}', async (expectedCount: string) => {
+  const productPage = new Product(getPage());
+  await productPage.validateCartCount(expectedCount);
+});
+

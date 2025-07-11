@@ -49,4 +49,11 @@ public async sortByOption(option: string): Promise<void> {
     const actualName = await lastItem.textContent();
     expect(actualName?.trim()).toBe(expectedName);
   }
+
+  public async validateCartCount(expectedCount: string): Promise<void> {
+  const cartBadge = this.page.locator('.shopping_cart_badge');
+  const actualCount = await cartBadge.textContent();
+  expect(actualCount?.trim()).toBe(expectedCount);
+}
+
 }
