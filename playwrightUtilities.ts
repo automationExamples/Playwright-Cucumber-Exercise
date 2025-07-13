@@ -1,4 +1,4 @@
-import { Browser, chromium, Page } from 'playwright';
+import { Browser, chromium, Page, expect } from '@playwright/test';
 
 let browser: Browser | null = null;
 let page: Page | null = null;
