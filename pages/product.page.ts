@@ -11,4 +11,14 @@ export class Product {
     public async addBackPackToCart() {
         await this.page.locator(this.addToCart).click()
     }
+    async sortBy(sortLabel: string) {
+    await this.page.selectOption('select[data-test="product-sort-container"]', { label: sortLabel });
+  }
+
+  async getProductPrices(): Promise<number[]> {
+    const prices = await this.page.$$eval('.inventory_item_price', elements =>
+      elements.map(e => parseFloat(e.textContent?.replace('$', '') || '0'))
+    );
+    return prices;
+  }
 }
