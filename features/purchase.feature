@@ -10,7 +10,9 @@ Feature: Purchase Feature
   Then Select Checkout
   Then Fill in the "Venkat", "Golla", and "08837"
   Then I will click on the continue button
+  #Can Validate all the details of the Item selected
   Then I will click on the finish button
+  #Can Validate the complete message
   Then I Validate the text 'Thank you for your order'
 
     # TODO: Select the cart (top-right)

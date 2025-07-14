@@ -25,16 +25,21 @@ export class Product {
 
   public async verifySort(sortOption : string) {
     
-  const priceLocators = await this.page.locator('').allTextContents();
+  const priceLocators = await this.page.locator('.inventory_item_price').allTextContents();
 
   // Convert prices to float numbers
   const prices = priceLocators.map(priceText =>
     parseFloat(priceText.replace('$', '').trim())
   );
 
-  // Clone for comparison
-   const sortedPrices = [...prices].sort((a, b) => {
-    return sortOption.includes('low to high') ? a - b : b - a;
+  const sortedPrices = [...prices].sort((a, b) => {
+    if (sortOption.toLowerCase().includes('low to high')) {
+      return a - b; 
+    } else if (sortOption.toLowerCase().includes('high to low')) {
+      return b - a;
+    } else {
+      throw new Error(`Unsupported sort option: ${sortOption}`);
+    }
   });
 
   // Assertion
