@@ -10,7 +10,7 @@ Then('I will click on the cart button', async () => {
   await new Product(getPage()).clickCartButton();
 });
 
-Then('I sort the items by {string}', async (sortOption) => {
+Then('I sort the items by Price {string}', async (sortOption: string) => {
   await new Product(getPage()).selectSort(sortOption);
 });
 

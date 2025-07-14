@@ -20,7 +20,8 @@ export class Product {
     }
 
     public async selectSort(sortOption : string) {
-        await this.page.locator(this.sortOption).selectOption(sortOption)
+        debugger;
+        await this.page.locator(this.sortOption).selectOption({ label: sortOption })
     }
 
   public async verifySort(sortOption : string) {

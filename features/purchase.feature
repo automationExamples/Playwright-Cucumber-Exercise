@@ -7,13 +7,13 @@ Feature: Purchase Feature
   Then I will login as 'standard_user'
   Then I will add the backpack to the cart
   Then I will click on the cart button
-  Then Select Checkout
+  Then I will click on the checkout button
   Then Fill in the "Venkat", "Golla", and "08837"
   Then I will click on the continue button
   #Can Validate all the details of the Item selected
   Then I will click on the finish button
   #Can Validate the complete message
-  Then I Validate the text 'Thank you for your order'
+  Then I Validate the text 'Thank you for your order!'
 
     # TODO: Select the cart (top-right)
     # TODO: Select Checkout

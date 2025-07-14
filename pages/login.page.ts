@@ -3,9 +3,9 @@ import { Page } from "@playwright/test"
 export class Login {
     private readonly page: Page
     private readonly password: string = 'secret_sauce'
-    private readonly passwordField: string = 'input[id="password"]'
-    private readonly userNameField: string = 'input[id=your"user-name"]'
-    private readonly loginButton: string = 'input[id="login-button"]'
+    private readonly passwordField: string = '//input[@id="password"]'
+    private readonly userNameField: string = '//input[@id="user-name"]'
+    private readonly loginButton: string = '//input[@id="login-button"]'
     private readonly errorMessage: string = '//h3[@data-test="error"]'
 
     constructor(page: Page) {
