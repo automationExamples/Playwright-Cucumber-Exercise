@@ -7,7 +7,12 @@ Feature: Product Feature
   Scenario Outline:  Validate product sort by price <sort>
   Then I will login as 'standard_user'
     # TODO: Sort the items by <sort>
+  When I sort items by "<sort>"
     # TODO: Validate all 6 items are sorted correctly by price
+  Then I validate that all items are sorted by price "<sort>"
+
   Examples:
     # TODO: extend the datatable to paramterize this test
-    | sort |
+    |       sort            |
+    | Price (low to high)   |
+    | Price (high to low)   |
