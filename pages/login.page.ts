@@ -7,11 +7,20 @@ export class Login {
     private readonly userNameField: string = 'input[id="user-name"]'
     private readonly loginButton: string = 'input[id="login-button"]'
     private readonly errorMessage: string = 'h3[data-test="error"]'
+    private readonly productsPageUrl: string = 'https://www.saucedemo.com/inventory.html'
+
 
 
 
     constructor(page: Page) {
         this.page = page;
+    }
+    // method to verify the url of product page
+    public async verifyUrl() {
+        const currentUrl = await this.page.url();
+        if (currentUrl !== this.productsPageUrl) {
+            throw new Error(`Expected URL to be ${this.productsPageUrl} but found ${currentUrl}`);
+        }
     }
 
     public async verifyTitle(targetTitle: string) {

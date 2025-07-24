@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test"
+import { Page,expect } from "@playwright/test"
 
 
 export class Product {
@@ -10,6 +10,10 @@ export class Product {
     constructor(page: Page) {
         this.page = page;
     }
+    
+    
+
+
 
     public async addBackPackToCart() {
         await this.page.locator(this.addToCart).click()
@@ -44,12 +48,10 @@ export class Product {
             break;
         default:
             console.warn(`Invalid sort order: ${sortOrder}`);
-          
             break; 
         }
 
-   
+        expect(isSorted, `Product prices are not sorted in ${sortOrder} order`).toBeTruthy();
+
     }
-
-
 }

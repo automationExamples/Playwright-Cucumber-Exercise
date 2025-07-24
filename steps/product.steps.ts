@@ -14,3 +14,5 @@ Then('All products should be sorted by {string}', async (sortOrder) => {
   await new Product(getPage()).verifySortedOrder(sortOrder);
 });
 
+
+
