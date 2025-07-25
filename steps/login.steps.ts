@@ -11,7 +11,7 @@ Then('I will login as {string}', async (userName) => {
 });
 
 Then('validate the error message received', async function () {
-           // Write code here that turns the phrase above into concrete actions
-           await new Login(getPage()).validateLoginError();
-           //return 'pending';
-         });
+           
+  await new Login(getPage()).validateLoginError();
+           
+  });
