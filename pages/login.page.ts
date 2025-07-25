@@ -6,6 +6,7 @@ export class Login {
     private readonly passwordField: string = 'input[id="password"]'
     private readonly userNameField: string = 'input[id="user-name"]'
     private readonly loginButton: string = 'input[id="login-button"]'
+    private readonly loginErrorMsg: string = 'h3'
 
     constructor(page: Page) {
         this.page = page;
@@ -22,5 +23,12 @@ export class Login {
         await this.page.locator(this.userNameField).fill(userName)
         await this.page.locator(this.passwordField).fill(this.password)
         await this.page.locator(this.loginButton).click()
+    }
+
+    public async verifyLoginErrorMessage(expectedErrorMessage: string) {
+        const actualErrorMsg = await this.page.locator(this.loginErrorMsg).textContent()
+        if (actualErrorMsg !== expectedErrorMessage) {
+          throw new Error(`Expected error message to be ${expectedErrorMessage} but found ${actualErrorMsg}`)
+        }
     }
 }
