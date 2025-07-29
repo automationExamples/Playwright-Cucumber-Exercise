@@ -7,7 +7,13 @@ const options = {
     reportSuiteAsScenarios: true,
     scenarioTimestamp: true,
     launchReport: true,
-    metadata: {}
+    metadata: {
+      "App Version": "1.0.0",
+      "Test Environment": "Local",
+      "Browser": "Playwright",
+      "Platform": process.platform,
+      "Executed": "Local"
+    }
 };
 
 reporter.generate(options);
