@@ -7,7 +7,21 @@ Feature: Product Feature
   Scenario Outline:  Validate product sort by price <sort>
   Then I will login as 'standard_user'
     # TODO: Sort the items by <sort>
+  Then I sort products by price "<sort>"
     # TODO: Validate all 6 items are sorted correctly by price
+  Then I validate products are sorted by price "<sort>"
   Examples:
     # TODO: extend the datatable to paramterize this test
     | sort |
+    | lohi |
+    | hilo |
+
+  # New Scenario Outline for name sorting
+  Scenario Outline: Validate product sort by name <sort>
+    Then I will login as 'standard_user'
+    Then I sort products by name "<sort>"
+    Then I validate products are sorted by name "<sort>"
+  Examples:
+    | sort   |
+    | nameaz |
+    | nameza |
