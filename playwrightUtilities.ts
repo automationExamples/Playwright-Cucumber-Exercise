@@ -2,7 +2,6 @@ import { Browser, chromium, Page } from 'playwright';
 
 let browser: Browser | null = null;
 let page: Page | null = null;
-const DEFAULT_TIMEOUT = 30000;
 
 export const initializeBrowser = async () => {
   if (!browser) {
@@ -13,7 +12,6 @@ export const initializeBrowser = async () => {
 export const initializePage = async () => {
   if (browser && !page) {
     page = await browser.newPage();
-    page.setDefaultTimeout(DEFAULT_TIMEOUT);
   }
 };
 
