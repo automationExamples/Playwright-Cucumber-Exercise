@@ -6,6 +6,8 @@ const options = {
     output: 'cucumber_report.html',
     reportSuiteAsScenarios: true,
     scenarioTimestamp: true,
+    screenshotsDirectory: 'screenshots/',
+    storeScreenshots: true,
     launchReport: true,
     metadata: {}
 };
