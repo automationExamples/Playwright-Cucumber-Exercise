@@ -10,6 +10,5 @@ Given('I open the {string} page', async (url) => {
 Then('I take a screenshot', async function () {
   const screenshot = await getPage().screenshot({ fullPage: true });
 
-  // Attach to Cucumber report (important: use `function()` syntax, not arrow function)
  this.attach(screenshot, 'image/png');
 });
