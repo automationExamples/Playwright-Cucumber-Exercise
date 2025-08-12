@@ -1,14 +1,16 @@
-import { Page } from "@playwright/test"
+import { Page, expect } from "@playwright/test";
 
 export class Product {
-    private readonly page: Page
-    private readonly addToCart: string = 'button[id="add-to-cart-sauce-labs-backpack"]'
+  constructor(private page: Page) {}
 
-    constructor(page: Page) {
-        this.page = page;
-    }
+  async addBackPackToCart() {
+    await this.page.waitForURL("**/inventory.html");
+    await this.page
+      .locator(".inventory_item")
+      .filter({ hasText: "Sauce Labs Backpack" })
+      .getByRole("button", { name: /add to cart/i })
+      .click();
 
-    public async addBackPackToCart() {
-        await this.page.locator(this.addToCart).click()
-    }
+    await expect(this.page.locator(".shopping_cart_badge")).toHaveText("1");
+  }
 }
