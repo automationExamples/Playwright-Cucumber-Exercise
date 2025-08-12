@@ -12,3 +12,10 @@ Feature: Purchase Feature
     # TODO: Select Continue
     # TODO: Select Finish
     # TODO: Validate the text 'Thank you for your order!'
+
+    Then I open the shopping cart
+    Then I proceed to checkout
+    Then I enter checkout information: first name "Senia", last name "Chap", postal code "28212"
+    Then I continue to the checkout overview
+    Then I complete the purchase
+    Then I should see the order confirmation message "Thank you for your order!"
