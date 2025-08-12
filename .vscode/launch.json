@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Cucumber Tests",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/node_modules/@cucumber/cucumber/bin/cucumber-js",
+        "args": [
+          "features",          // or your specific feature path
+          "--require", "steps", // folder or files where your step definitions live
+          "--require-module", "ts-node/register", // if you use TypeScript
+          "--format", "progress"
+        ],
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen",
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "DEBUG": "pw:api"   // optional, to enable Playwright debug logs
+        },
+        "skipFiles": [
+          "<node_internals>/**"
+        ]
+      }
+    ]
+  }
+  
