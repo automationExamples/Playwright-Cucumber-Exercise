@@ -3,11 +3,16 @@ Feature: Product Feature
   Background:
     Given I open the "https://www.saucedemo.com/" page
 
-  # Create a datatable to validate the Price (high to low) and Price (low to high) sort options (top-right) using a Scenario Outline
-  Scenario Outline:  Validate product sort by price <sort>
+  Scenario:  Validate product sort by <sort>
+  # Step to log in as a standard user
   Then I will login as 'standard_user'
-    # TODO: Sort the items by <sort>
-    # TODO: Validate all 6 items are sorted correctly by price
+  # Step to perform the sorting action using the specified sort option
+  Then I will sort the items by "<sort>"
+  # Step to validate that the items are sorted as expected
+  Then I should see the items sorted by "<sort>"
+
+  # The Examples table provides the values for <sort>, so the scenario runs twice: once for each sort option
   Examples:
-    # TODO: extend the datatable to paramterize this test
     | sort |
+    | Price (low to high) |
+    | Price (high to low) |
