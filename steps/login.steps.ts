@@ -11,7 +11,7 @@ Then('I will login as {string}', async (userName) => {
 });
 
 Then('I should see the error message {string}', async (expectedErrorMessage) => {
-  const errorSelector = '.error-message-container'; // Adjust the selector based on the actual error message element
+  const errorSelector = '.error-message-container';
   const page = getPage();
   const actualErrorMessage = await page.locator(errorSelector).innerText();
 

@@ -12,15 +12,19 @@ export const initializeBrowser = async () => {
 
 export const initializePage = async () => {
   if (browser && !page) {
+    console.log("Initializing page...");
     page = await browser.newPage();
     page.setDefaultTimeout(DEFAULT_TIMEOUT);
+    console.log("Page initialized.");
   }
 };
 
 export const getPage = (): Page => {
   if (!page) {
-    throw new Error('Page has not been initialized. Please call initializePage first.');
+    console.error("Page has not been initialized.");
+    throw new Error("Page has not been initialized. Please call initializePage first.");
   }
+  console.log("Page retrieved successfully.");
   return page;
 };
 
