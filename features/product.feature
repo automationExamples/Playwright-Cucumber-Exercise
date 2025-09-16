@@ -4,10 +4,12 @@ Feature: Product Feature
     Given I open the "https://www.saucedemo.com/" page
 
   # Create a datatable to validate the Price (high to low) and Price (low to high) sort options (top-right) using a Scenario Outline
-  Scenario Outline:  Validate product sort by price <sort>
-  Then I will login as 'standard_user'
-    # TODO: Sort the items by <sort>
-    # TODO: Validate all 6 items are sorted correctly by price
+  Scenario Outline:  Validate product sort by <sortBy> in <order> order
+    When I login as 'standard_user'
+    And I sort by "<sortBy>" in "<order>" order
+    Then I should see all items sorted by "<sortBy>" in "<order>" order
+
   Examples:
-    # TODO: extend the datatable to paramterize this test
-    | sort |
+    | sortBy | order |
+    | price  | desc  |
+    | price  | asc   |

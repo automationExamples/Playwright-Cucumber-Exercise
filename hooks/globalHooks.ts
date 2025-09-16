@@ -1,13 +1,15 @@
-import { After, Before, setDefaultTimeout } from "@cucumber/cucumber";
-import { closeBrowser, initializeBrowser, initializePage } from "../playwrightUtilities";
+// support/globalHooks.ts
+import { Before, After } from "@cucumber/cucumber";
+import { initializeBrowser, initializePage, closeBrowser } from "../playwrightUtilities";
+import { TestContext } from "../support/TestContext";
 
-setDefaultTimeout(15000);
 
-Before( async () => {
-    await initializeBrowser();
-    await initializePage();
-})
+Before(async function () {
+  await initializeBrowser();
+  await initializePage();
+  this.context = new TestContext();
+});
 
-After( async () => {
-    await closeBrowser();
-})
+After(async function (){
+  await closeBrowser();
+});
