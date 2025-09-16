@@ -9,3 +9,13 @@ Then('I should see the title {string}', async (expectedTitle) => {
 Then('I will login as {string}', async (userName) => {
   await new Login(getPage()).loginAsUser(userName);
 });
+
+Then('I should see the error message {string}', async (expectedErrorMessage) => {
+  const errorSelector = '.error-message-container'; // Adjust the selector based on the actual error message element
+  const page = getPage();
+  const actualErrorMessage = await page.locator(errorSelector).innerText();
+
+  if (actualErrorMessage !== expectedErrorMessage) {
+    throw new Error(`Expected error message to be "${expectedErrorMessage}" but found "${actualErrorMessage}"`);
+  }
+});
