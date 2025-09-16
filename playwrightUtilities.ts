@@ -19,7 +19,7 @@ export const initializePage = async () => {
 
 export const getPage = (): Page => {
   if (!page) {
-    throw new Error('Page has not been initialized. Please call initializePage first.');
+    throw new Error("Page has not been initialized. Please call initializePage first.");
   }
   return page;
 };
