@@ -1,0 +1,10 @@
+{
+  "cucumberautocomplete.steps": [
+    "${workspaceFolder}/steps/**/*.ts",
+    "${workspaceFolder}/steps/*.ts",
+    "${workspaceFolder}/**/steps/**/*.ts",
+    "${workspaceFolder}/**/steps/*.ts"
+  ],
+  "cucumberautocomplete.syncfeatures": "${workspaceFolder}/features/**/*.feature",
+  "cucumberautocomplete.strictGherkinCompletion": true
+}
