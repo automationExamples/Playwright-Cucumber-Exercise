@@ -22,5 +22,10 @@ export class Login {
         await this.page.locator(this.userNameField).fill(userName)
         await this.page.locator(this.passwordField).fill(this.password)
         await this.page.locator(this.loginButton).click()
+        
+
+        if (this.userNameField !== this.userNameField) {
+          throw new Error(`Sorry, this user has been locked out.`);
+        }
     }
 }
