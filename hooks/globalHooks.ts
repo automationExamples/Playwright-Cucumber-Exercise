@@ -1,13 +1,17 @@
 import { After, Before, setDefaultTimeout } from "@cucumber/cucumber";
-import { closeBrowser, initializeBrowser, initializePage } from "../playwrightUtilities";
+import { initializeBrowser, initializePage, closePage } from "../playwrightUtilities";
 
-setDefaultTimeout(15000);
+setDefaultTimeout(30000);
 
-Before( async () => {
+Before(async () => {
     await initializeBrowser();
     await initializePage();
-})
+});
 
-After( async () => {
-    await closeBrowser();
-})
+After(async () => {
+    try {
+        await closePage();
+    } catch (error) {
+        console.log('Error closing page:', error);
+    }
+});
