@@ -7,11 +7,13 @@ const DEFAULT_TIMEOUT = 30000;
 export const initializeBrowser = async () => {
   if (!browser) {
     browser = await chromium.launch({ headless: false });
+    timeout: 60000 
   }
 };
 
 export const initializePage = async () => {
   if (browser && !page) {
+    const context = await browser.newContext();
     page = await browser.newPage();
     page.setDefaultTimeout(DEFAULT_TIMEOUT);
   }
@@ -22,6 +24,13 @@ export const getPage = (): Page => {
     throw new Error('Page has not been initialized. Please call initializePage first.');
   }
   return page;
+};
+
+export const closePage = async () => {
+  if (page) {
+    await page.close();
+    page = null;
+  }
 };
 
 export const closeBrowser = async () => {
