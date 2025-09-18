@@ -4,9 +4,10 @@ Feature: Login Feature
     Given I open the "https://www.saucedemo.com/" page
 
   Scenario: Validate the login page title
-    # TODO: Fix this failing scenario
-    Then I should see the title "Labs Swag"
+    # ACTION: Fixed this title with actual value
+    Then I should see the title "Swag Labs"
 
   Scenario: Validate login error message
     Then I will login as 'locked_out_user'
-    # TODO: Add a step to validate the error message received
+    # ACTION: Added a step to validate the error message received
+    Then I will validate the error message received as 'Epic sadface: Sorry, this user has been locked out.'

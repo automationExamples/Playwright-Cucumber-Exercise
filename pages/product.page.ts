@@ -1,14 +1,18 @@
-import { Page } from "@playwright/test"
+import { Page } from '@playwright/test';
 
 export class Product {
-    private readonly page: Page
-    private readonly addToCart: string = 'button[id="add-to-cart-sauce-labs-backpack"]'
+  private readonly page: Page;
+  private readonly sortDropdown = '.product_sort_container';
+  private readonly priceSelector = '.inventory_item_price';
 
-    constructor(page: Page) {
-        this.page = page;
-    }
+  constructor(page: Page) {
+    this.page = page;
+  }
 
-    public async addBackPackToCart() {
-        await this.page.locator(this.addToCart).click()
-    }
+  async sortItemsBy(option: string) {
+    await this.page.locator(this.sortDropdown).selectOption({ label: option });
+  }
+
+  
+
 }
