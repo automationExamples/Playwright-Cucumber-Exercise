@@ -1,14 +1,14 @@
 {
   "scripts": {
-    "test": "cucumber-js --format json:report.json --exit",
-    "report": "node generate-report.js"
+ "test:list": "cucumber-js --format summary --exit",
+  "test:report": "cucumber-js --format json:report.json --exit && node generate-report.js"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^10.0.1",
     "@cucumber/pretty-formatter": "^1.0.0",
     "@playwright/test": "^1.40.1",
     "@types/node": "^20.10.3",
-    "cucumber-html-reporter": "^7.1.1",
+    "cucumber-html-reporter": "^6.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
   }
