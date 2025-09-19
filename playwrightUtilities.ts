@@ -1,20 +1,19 @@
-import { Browser, chromium, Page } from 'playwright';
+import { chromium, Browser, Page, BrowserContext } from 'playwright';
 
-let browser: Browser | null = null;
-let page: Page | null = null;
-const DEFAULT_TIMEOUT = 30000;
+let browser: Browser;
+let context: BrowserContext;
+let page: Page;
 
 export const initializeBrowser = async () => {
-  if (!browser) {
-    browser = await chromium.launch({ headless: false });
-  }
+  browser = await chromium.launch({ headless: false }); // ister true yapabilirsin
+  context = await browser.newContext();
 };
 
 export const initializePage = async () => {
-  if (browser && !page) {
-    page = await browser.newPage();
-    page.setDefaultTimeout(DEFAULT_TIMEOUT);
+  if (!context) {
+    throw new Error('Context has not been initialized. Call initializeBrowser first.');
   }
+  page = await context.newPage();
 };
 
 export const getPage = (): Page => {
@@ -25,9 +24,7 @@ export const getPage = (): Page => {
 };
 
 export const closeBrowser = async () => {
-  if (browser) {
-    await browser.close();
-    browser = null;
-    page = null;
-  }
+  await page?.close();
+  await context?.close();
+  await browser?.close();
 };
