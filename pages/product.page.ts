@@ -1,4 +1,5 @@
 import { Page } from "@playwright/test"
+import { purchaseDetails } from '../contactDetails'
 
 export class Product {
     private readonly page: Page
@@ -11,6 +12,7 @@ export class Product {
     private readonly txtBoxZipCode = '[data-test="postalCode"]'
     private readonly continueButton = '//*[@id="continue"]'
     private readonly btnFinish = '[data-test="finish"]'
+    private readonly successMessage = '[data-test="complete-header"]'
 
     constructor(page: Page) {
         this.page = page;
@@ -39,9 +41,9 @@ export class Product {
         const lastName = this.page.locator(this.txtBoxLName)
         const zipcode = this.page.locator(this.txtBoxZipCode)
 
-        await firstName.fill('priyanka')
-        await lastName.fill('chowderpally')
-        await zipcode.fill('56466')
+        await firstName.fill(purchaseDetails.firstName)
+        await lastName.fill(purchaseDetails.lastName)
+        await zipcode.fill(purchaseDetails.zipCode)
     }
 
     public async clickContinueButton() {
@@ -53,6 +55,13 @@ export class Product {
       public  async clickFinishButton() {
         const btn = this.page.locator(this.btnFinish)
         await btn.click()
+        this.validateSuccessMessage()
     }
+
+    public async validateSuccessMessage(){
+        const actMsg = this.page.locator(this.successMessage)
+        await actMsg.isVisible
+    }
+
 
 }
