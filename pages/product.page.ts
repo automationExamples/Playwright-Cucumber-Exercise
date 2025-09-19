@@ -9,7 +9,8 @@ export class Product {
     private readonly txtBoxFName = '[data-test="firstName"]'
     private readonly txtBoxLName = '[data-test="lastName"]'
     private readonly txtBoxZipCode = '[data-test="postalCode"]'
-    private readonly btnContinue = '[data-test="continue"]'
+    private readonly continueButton = '//*[@id="continue"]'
+    private readonly btnFinish = '[data-test="finish"]'
 
     constructor(page: Page) {
         this.page = page;
@@ -25,7 +26,7 @@ export class Product {
         await cart.click()
         this.clickCheckouButton()
         this.fillPurchaseDetails()
-        this.btnContinue
+        this.clickContinueButton()
     }
 
     public async clickCheckouButton() {
@@ -33,15 +34,25 @@ export class Product {
         await btn.click()
     }
 
-    public async fillPurchaseDetails(){
-        this.page.locator(this.txtBoxFName).fill('Priyanka')
-        this.page.locator(this.txtBoxLName).fill('chowderpally')
-        this.page.locator(this.txtBoxZipCode).fill('65473')
+    public async fillPurchaseDetails() {
+        const firstName = this.page.locator(this.txtBoxFName)
+        const lastName = this.page.locator(this.txtBoxLName)
+        const zipcode = this.page.locator(this.txtBoxZipCode)
+
+        await firstName.fill('priyanka')
+        await lastName.fill('chowderpally')
+        await zipcode.fill('56466')
     }
 
     public async clickContinueButton() {
-        const btn = this.page.locator(this.btnContinue)
+        const btn = this.page.locator(this.continueButton)
         await btn.click()
-        await this.page.waitForLoadState('networkidle')
+        await btn.click()
     }
+    
+      public  async clickFinishButton() {
+        const btn = this.page.locator(this.btnFinish)
+        await btn.click()
+    }
+
 }

@@ -10,6 +10,7 @@ Then('I purchase the product', async () => {
     await new Product(getPage()).clickPurchase();
 });
 
-Then('Fill in the {string}, {string}, and {string}', async (fName: string, lName: string, zipCode: string): Promise<void> => {
-    await new Product(getPage()).enterCustomerInfo(fName, lName, zipCode);
+Then('I should see the purchased text message', async () => {
+    await new Product(getPage()).clickFinishButton();
 });
+
