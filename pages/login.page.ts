@@ -23,4 +23,16 @@ export class Login {
         await this.page.locator(this.passwordField).fill(this.password)
         await this.page.locator(this.loginButton).click()
     }
+
+public async validateErrorMessage() {
+    const errorMessage = this.page.locator('//*[@id="login_button_container"]/div/form/div[3]/h3');
+    await errorMessage.waitFor({ state: 'visible', timeout: 5000 });
+
+    const actualText = (await errorMessage.textContent())?.trim();
+    const expected = 'Epic sadface: Sorry, this user has been locked out.';
+
+    if (actualText !== expected) {
+        throw new Error(`Expected error message to be:\n"${expected}"\nBut found:\n"${actualText}"`);
+    }
+}
 }
