@@ -1,13 +1,17 @@
 Feature: Product Feature
 
-  Background:
+ Background:
     Given I open the "https://www.saucedemo.com/" page
 
-  # Create a datatable to validate the Price (high to low) and Price (low to high) sort options (top-right) using a Scenario Outline
-  Scenario Outline:  Validate product sort by price <sort>
-  Then I will login as 'standard_user'
-    # TODO: Sort the items by <sort>
-    # TODO: Validate all 6 items are sorted correctly by price
+  Scenario: Validate product sort by price <sort>
+  When I will login as 'standard_user'
+  Then I should see the title "Swag Labs"
+  When I select the "<sortOrder>" sort option
+  Then the products must be sorted by "<sortOrder>" based by price
+  And price for the first product should be "<firstPrice>"
+  And price for the last product should be "<lastPrice>"
+
   Examples:
-    # TODO: extend the datatable to paramterize this test
-    | sort |
+ | sortOrder           | firstPrice | lastPrice |
+ | Price (low to high) | $7.99      | $49.99    |
+ | Price (high to low) | $49.99     | $7.99     |
