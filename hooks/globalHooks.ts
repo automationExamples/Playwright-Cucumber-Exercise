@@ -1,13 +1,16 @@
+// globalHooks.ts
 import { After, Before, setDefaultTimeout } from "@cucumber/cucumber";
-import { closeBrowser, initializeBrowser, initializePage } from "../playwrightUtilities";
+import { initializeBrowser, initializePage, getPage, closeBrowser } from "../playwrightUtilities";
+import { CustomWorld } from '../world';
 
 setDefaultTimeout(15000);
 
-Before( async () => {
-    await initializeBrowser();
-    await initializePage();
-})
+Before(async function (this: CustomWorld) {
+  await initializeBrowser();
+  await initializePage();
+  this.page = getPage(); // 🔑 attach Playwright page to Cucumber World
+});
 
-After( async () => {
-    await closeBrowser();
-})
+After(async function () {
+  await closeBrowser();
+});
