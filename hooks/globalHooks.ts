@@ -8,7 +8,7 @@ setDefaultTimeout(15000);
 Before(async function (this: CustomWorld) {
   await initializeBrowser();
   await initializePage();
-  this.page = getPage(); // 🔑 attach Playwright page to Cucumber World
+  this.page = getPage(); 
 });
 
 After(async function () {

@@ -23,7 +23,7 @@ export class Product {
     const value = sortMap[option];
     if (!value) throw new Error(`Unknown sort option: ${option}`);
 
-    // ✅ More robust selector
+    // More robust selector
     const dropdown = this.page.locator('select.product_sort_container');
 
     // Ensure inventory page is loaded

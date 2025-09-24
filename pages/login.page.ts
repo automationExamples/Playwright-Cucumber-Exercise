@@ -31,31 +31,31 @@ export class Login {
     await this.page.locator(this.passwordField).fill(password);
     await this.page.locator(this.loginButton).click();
 
-    // ✅ If login succeeds → inventory page should load
+    
     const success = await this.page
       .locator(".inventory_list")
       .isVisible({ timeout: 5000 })
       .catch(() => false);
 
     if (success) {
-      console.log("✅ Login successful, inventory page loaded.");
+      console.log("Login successful, inventory page loaded.");
       return;
     }
 
-    // ❌ If login fails → error message is shown, let step defs check it
+    // If login fails → error message is shown, let step defs check it
     const errorVisible = await this.page
       .locator('[data-test="error"]')
       .isVisible()
       .catch(() => false);
 
     if (errorVisible) {
-      console.log("⚠️ Login failed, error message will be checked in step.");
+      console.log("Login failed, error message will be checked in step.");
       return;
     }
 
     // Fallback: neither success nor error detected
     throw new Error(
-      "❌ Login did not navigate to inventory or show error message."
+      "Login did not navigate to inventory or show error message."
     );
   }
 }

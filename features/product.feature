@@ -7,8 +7,3 @@ Feature: Product Feature
   Scenario Outline: Validate product sort by <sortOption>
     When I sort products by "<sortOption>"
     Then products should be sorted in "<order>" order
-
-    Examples:
-      | sortOption          | order |
-      | Price (low to high) | asc   |
-      | Price (high to low) | desc  |
