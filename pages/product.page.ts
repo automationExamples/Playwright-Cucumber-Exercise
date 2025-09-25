@@ -3,7 +3,7 @@ import { Page } from "@playwright/test"
 export class Product {
     private readonly page: Page
     private readonly addToCart: string = 'button[id="add-to-cart-sauce-labs-backpack"]'
-    private readonly sortSelect: string = 'select[data-test="product_sort_container"]'
+    private readonly sortSelect: string = 'select[data-test="product-sort-container"]'
     private readonly priceLocator: string = '.inventory_item_price'
     private readonly inventoryContainer: string = '.inventory_list'
 
