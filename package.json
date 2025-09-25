@@ -4,11 +4,12 @@
     "report": "node generate-report.js"
   },
   "devDependencies": {
-    "@cucumber/cucumber": "^10.0.1",
+    "@cucumber/cucumber": "^10.3.0",
     "@cucumber/pretty-formatter": "^1.0.0",
     "@playwright/test": "^1.40.1",
-    "@types/node": "^20.10.3",
+    "@types/node": "^20.19.17",
     "cucumber-html-reporter": "^7.1.1",
+    "playwright": "^1.55.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
   }
