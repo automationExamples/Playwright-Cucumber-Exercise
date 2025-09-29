@@ -26,6 +26,13 @@ export const getPage = (): Page => {
   return page;
 };
 
+export const closePage = async () => {
+  if (page) {
+    await page.close();
+    page = null;
+  }
+};
+
 export const closeBrowser = async () => {
   if (browser) {
     await browser.close();

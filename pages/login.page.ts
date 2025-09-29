@@ -1,5 +1,6 @@
 import { Page } from "@playwright/test"
 import { testData } from "../data/test-data"
+import { expect } from "@playwright/test"
 
 export class Login {
     private readonly page: Page
@@ -27,7 +28,7 @@ export class Login {
     }
 
     public async verifyErrorMessage(errorMessage: string ){
-        // написати експект на 
+        await expect(this.page.locator(this.expectedErrorMessage)).toBeVisible();
         const errorElement = await this.page.waitForSelector(this.expectedErrorMessage);
         let actualErrorMessage = await errorElement.textContent()
         if (errorMessage !== actualErrorMessage?.trim()) {
