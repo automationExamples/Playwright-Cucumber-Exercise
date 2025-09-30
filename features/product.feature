@@ -8,8 +8,6 @@ Feature: Product Feature
 	Then I will login as 'standard_user'
 	Then I sort the products by "<sort>"
 	Then I will verify the products are sorted by "<sort>"
-    # TODO: Sort the items by <sort>
-    # TODO: Validate all 6 items are sorted correctly by price
 	Examples:
 	| sort           |
 	| Price (high to low) |
