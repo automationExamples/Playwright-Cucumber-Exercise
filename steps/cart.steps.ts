@@ -18,6 +18,10 @@ Then('I select Finish', async () => {
     await new Cart(getPage()).finish();
 });
 
+Then('I will calculate the tax and total', async () => {
+    await new Cart(getPage()).calculateTotal();
+});
+
 Then('I should see success text {string}', async (expectedText) => {
 	await new Cart(getPage()).getSuccessText(expectedText);
 });

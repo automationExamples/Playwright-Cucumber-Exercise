@@ -9,6 +9,10 @@ export class Cart {
 	private readonly continueButton: string = '[data-test="continue"]'
 	private readonly finishButton: string = '[data-test="finish"]'
 	private readonly successMessage: string = '[data-test="complete-header"]'
+	private readonly allProductPrices: string = '[data-test="inventory-item-price"]'
+	private readonly taxAmount: string = '[data-test="tax-label"]'
+	private readonly grandTotal: string = '[data-test="total-label"]'
+
 
 	constructor(page: Page) {
 		this.page = page;
@@ -34,5 +38,15 @@ export class Cart {
 
 	public async getSuccessText(expectedText: string) {
 		await expect(this.page.locator(this.successMessage)).toHaveText(expectedText);
+	}
+
+	public async calculateTotal() {
+		const prices = await this.page.locator(this.allProductPrices).allTextContents();
+		const parsed = prices.map(p => parseFloat(p.replace('$', '')));
+		const total = parsed.reduce((acc, curr) => acc + curr, 0);
+		const taxAmount = total * 0.08;
+		const grandTotal = total + taxAmount;
+		await expect(this.page.locator(this.taxAmount)).toHaveText(`Tax: $${taxAmount.toFixed(2)}`);
+		await expect(this.page.locator(this.grandTotal)).toHaveText(`Total: $${grandTotal.toFixed(2)}`);
 	}
 }
