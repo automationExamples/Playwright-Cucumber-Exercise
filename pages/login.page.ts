@@ -32,5 +32,5 @@ export class Login {
         if(pageError !== errorMessage){
           throw new Error(`Expected message to be ${errorMessage} but found ${pageError}`);
         }
-        }
     }
+}
