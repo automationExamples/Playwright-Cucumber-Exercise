@@ -13,3 +13,11 @@ Then('I sort the items by {string}', async (sortOption) => {
 Then('I validate all items are sorted correctly by price in {string} order', async (sortOrder) => {
     await new Product(getPage()).validatePriceSort(sortOrder);
 });
+
+Then('I should see the cart is empty', async () => {
+  await new Product(getPage()).validateCartIsEmpty();
+});
+
+Then('I should see the cart still contains items', async () => {
+  await new Product(getPage()).validateCartHasItems();
+});

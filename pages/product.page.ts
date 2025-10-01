@@ -5,6 +5,7 @@ export class Product {
     private readonly addToCart = 'button[id="add-to-cart-sauce-labs-backpack"]';
     private readonly sortDropdown = 'select[data-test="product-sort-container"]';
     private readonly productPrices = '.inventory_item_price';
+    private readonly cartBadge: string = '.shopping_cart_badge'
 
     constructor(page: Page) {
         this.page = page;
@@ -42,5 +43,21 @@ export class Product {
         }
 
         expect(numericPrices).toEqual(sorted);
+    }
+
+    public async validateCartIsEmpty() {
+        const cartBadge = this.page.locator(this.cartBadge);
+        const isVisible = await cartBadge.isVisible();
+        if (isVisible) {
+            throw new Error('Expected cart to be empty but it contains items');
+        }
+    }
+
+    public async validateCartHasItems() {
+        const cartBadge = this.page.locator(this.cartBadge);
+        const isVisible = await cartBadge.isVisible();
+        if (!isVisible) {
+            throw new Error('Expected cart to have items but it is empty');
+        }
     }
 }

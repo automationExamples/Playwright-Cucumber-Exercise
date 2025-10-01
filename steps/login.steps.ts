@@ -13,3 +13,21 @@ Then('I will login as {string}', async (userName) => {
 Then('I should see the error message {string}', async (expectedMessage) => {
   await new Login(getPage()).validateErrorMessage(expectedMessage);
 });
+
+Then('I will open the hamburger menu', async () => {
+  await new Login(getPage()).openHamburgerMenu();
+});
+
+Then('I will select logout', async () => {
+  await new Login(getPage()).logout();
+});
+
+Then('I should be redirected to the login page', async () => {
+  await new Login(getPage()).validateLoginPageDisplayed();
+});
+
+Then('I will logout and login again as {string}', async (userName) => {
+  await new Login(getPage()).openHamburgerMenu();
+  await new Login(getPage()).logout();
+  await new Login(getPage()).loginAsUser(userName);
+});
