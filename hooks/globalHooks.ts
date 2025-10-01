@@ -1,7 +1,7 @@
 import { After, Before, setDefaultTimeout } from "@cucumber/cucumber";
 import { closeBrowser, initializeBrowser, initializePage } from "../playwrightUtilities";
 
-setDefaultTimeout(30000);
+setDefaultTimeout(15000);
 
 Before( async () => {
     await initializeBrowser();
