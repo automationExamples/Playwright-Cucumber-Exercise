@@ -68,7 +68,7 @@ export class Product {
     });
 
     console.log('Filter options:', options);
-    return options; // optional, if you want to use in a test assertion
+    return options; 
   }
 }
 
