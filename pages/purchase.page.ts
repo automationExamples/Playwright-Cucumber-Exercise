@@ -73,7 +73,7 @@ public async verifyCurrentUrl(expectedUrl: string) {
   if (actualUrl !== expectedUrl) {
     throw new Error(`Expected URL "${expectedUrl}", but got "${actualUrl}"`);
   }
-  console.log(`✅ Current URL is correct: ${actualUrl}`);
+  console.log(`Current URL is correct: ${actualUrl}`);
 }
 }
     
