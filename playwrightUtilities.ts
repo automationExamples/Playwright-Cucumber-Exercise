@@ -31,3 +31,4 @@ export const closeBrowser = async () => {
     page = null;
   }
 };
+
