@@ -1,6 +1,8 @@
 name: Dispatch to Grader
 
 on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
     inputs:
       pr_number:
@@ -11,7 +13,7 @@ jobs:
   notify-grader:
     runs-on: ubuntu-latest
     steps:
-      - name: Verify token can access target repo
+      - name: Verify token can access private grader repo
         run: |
           code=$(curl -s -o /dev/null -w "%{http_code}\n" \
             -H "Authorization: token ${{ secrets.GRADER_REPO_PAT }}" \
@@ -26,6 +28,6 @@ jobs:
           event-type: grade-assessment
           client-payload: >
             {
-              "pr_number": "${{ github.event.inputs.pr_number }}",
+              "pr_number": "${{ github.event_name == 'workflow_dispatch' && github.event.inputs.pr_number || github.event.pull_request.number }}",
               "repo_full": "${{ github.repository }}"
             }
