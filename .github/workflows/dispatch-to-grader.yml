@@ -1,0 +1,22 @@
+name: Dispatch to Grader
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  notify-grader:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send repository_dispatch to grader
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GRADER_REPO_PAT }} 
+          repository: automationExamples/Playwright-Cucumber-Exercise-Eval
+          event-type: grade-assessment
+          client-payload: >
+            {
+              "pr_number": "${{ github.event.pull_request.number }}",
+              "pr_sha":    "${{ github.event.pull_request.head.sha }}",
+              "repo_full": "${{ github.repository }}"
+            }
