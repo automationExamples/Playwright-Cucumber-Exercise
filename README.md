@@ -56,3 +56,4 @@ You will be scored based on your ability to complete the following tasks:
 - [ ] Modify and extend the 'Validate successful purchase text' from [purchase.feature](features/purchase.feature#6) with steps for each comment listed. Consider writing a new steps.ts file along with an appropriate page.ts
 - [ ] Modify and extend the 'Validate product sort by price sort' from [product.feature](features/product.feature#6) with steps for each comment listed. Utilize the Scenario Outline and Examples table to parameterize the test
 - [ ] Extend the testing coverage with anything you believe would be beneficial
+# Insightglobal_TestAssestment
