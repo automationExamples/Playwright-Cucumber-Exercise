@@ -12,9 +12,8 @@ on:
 jobs:
   notify-grader:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Resolve PR details (manual)
+      - name: Resolve PR details (manual run)
         if: ${{ github.event_name == 'workflow_dispatch' }}
         id: pr
         uses: actions/github-script@v7
