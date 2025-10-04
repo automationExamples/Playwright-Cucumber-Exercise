@@ -1,38 +1,22 @@
 name: Dispatch to Grader
 
 on:
-  pull_request_target:
-    types: [opened, synchronize, reopened]
   workflow_dispatch:
     inputs:
       pr_number:
-        description: 'PR number to dispatch'
+        description: 'PR number in this repo (e.g., 119)'
         required: true
 
 jobs:
   notify-grader:
     runs-on: ubuntu-latest
     steps:
-      - name: Resolve PR details (manual run)
-        if: ${{ github.event_name == 'workflow_dispatch' }}
-        id: pr
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const prNum = Number(core.getInput('pr_number'));
-            const {owner, repo} = context.repo;
-            const pr = await github.rest.pulls.get({ owner, repo, pull_number: prNum });
-            core.setOutput('pr_number', pr.data.number.toString());
-            core.setOutput('pr_sha', pr.data.head.sha);
-            core.setOutput('repo_full', `${owner}/${repo}`);
-
       - name: Verify token can access target repo
         run: |
           code=$(curl -s -o /dev/null -w "%{http_code}\n" \
             -H "Authorization: token ${{ secrets.GRADER_REPO_PAT }}" \
             https://api.github.com/repos/automationExamples/Playwright-Cucumber-Exercise-Eval)
-          echo "HTTP $code"
-          test "$code" = "200"
+          echo "HTTP $code"; test "$code" = "200"
 
       - name: Send repository_dispatch to grader
         uses: peter-evans/repository-dispatch@v3
@@ -42,7 +26,6 @@ jobs:
           event-type: grade-assessment
           client-payload: >
             {
-              "pr_number": "${{ github.event_name == 'workflow_dispatch' && steps.pr.outputs.pr_number || github.event.pull_request.number }}",
-              "pr_sha":    "${{ github.event_name == 'workflow_dispatch' && steps.pr.outputs.pr_sha     || github.event.pull_request.head.sha }}",
-              "repo_full": "${{ github.event_name == 'workflow_dispatch' && steps.pr.outputs.repo_full  || github.repository }}"
+              "pr_number": "${{ github.event.inputs.pr_number }}",
+              "repo_full": "${{ github.repository }}"
             }
