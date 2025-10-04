@@ -26,6 +26,14 @@ jobs:
             core.setOutput('pr_sha', pr.data.head.sha);
             core.setOutput('repo_full', `${owner}/${repo}`);
 
+      - name: Verify token can access target repo
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}\n" \
+            -H "Authorization: token ${{ secrets.GRADER_REPO_PAT }}" \
+            https://api.github.com/repos/automationExamples/Playwright-Cucumber-Exercise-Eval)
+          echo "HTTP $code"
+          test "$code" = "200"
+
       - name: Send repository_dispatch to grader
         uses: peter-evans/repository-dispatch@v3
         with:
