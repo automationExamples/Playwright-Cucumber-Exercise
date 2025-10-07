@@ -17,6 +17,10 @@ export class Login {
           throw new Error(`Expected title to be ${expectedTitle} but found ${pageTitle}`);
         }
     }
+    public async validateError(ExpectedMessage : string){
+        const errorMessage = await this.page.locator('[data-test="error"]').textContent()
+
+    }
 
     public async loginAsUser(userName: string) {
         await this.page.locator(this.userNameField).fill(userName)
