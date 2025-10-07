@@ -9,4 +9,5 @@ Feature: Login Feature
 
   Scenario: Validate login error message
     Then I will login as 'locked_out_user'
+    Then I should see the error message "Epic sadface: Sorry, this user has been locked out." 
     # TODO: Add a step to validate the error message received
