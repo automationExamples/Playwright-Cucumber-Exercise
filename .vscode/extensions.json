@@ -1,0 +1,7 @@
+{
+	"recommendations": [
+		"cucumber.cucumber",
+		"marcosvfranco.cucumberautocomplete-behat",
+		"dbaeumer.vscode-eslint"
+		]
+}
