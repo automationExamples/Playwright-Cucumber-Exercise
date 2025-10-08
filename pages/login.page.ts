@@ -14,7 +14,7 @@ export class Login {
     public async validateTitle(expectedTitle: string) {
         const pageTitle = await this.page.title();
         if (pageTitle !== expectedTitle) {
-          throw new Error(`Expected title to be ${expectedTitle} but found ${pageTitle}`);
+          throw new Error('Expected title to be ${expectedTitle} but found ${pageTitle}');
         }
     }
 
