@@ -7,7 +7,7 @@ Feature: Purchase Feature
   When I login as 'standard_user'
   And I add the backpack to the cart
   And I check out with the information:
-  | firstname | Daria   |npm run test
+  | firstname | Daria   |
   | lastname  | Britton |
   | zipcode   | 28105   |
   And I select Finish
