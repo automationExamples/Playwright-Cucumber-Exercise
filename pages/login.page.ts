@@ -1,14 +1,15 @@
 import { Page } from "@playwright/test"
+import { BasePage } from "./base.page"
 
-export class Login {
-    private readonly page: Page
+export class Login  extends BasePage{
     private readonly password: string = 'secret_sauce'
     private readonly passwordField: string = 'input[id="password"]'
     private readonly userNameField: string = 'input[id="user-name"]'
     private readonly loginButton: string = 'input[id="login-button"]'
 
-    constructor(page: Page) {
-        this.page = page;
+   constructor(page: Page) {
+    super(page);
+    this.page;
     }
 
     public async validateTitle(expectedTitle: string) {

@@ -31,3 +31,11 @@ export const closeBrowser = async () => {
     page = null;
   }
 };
+
+export const validateArraySorted = (values: number[], order: 'asc' | 'desc') => {
+  const sorted = [...values].sort((a, b) => (order === 'asc' ? a - b : b - a));
+
+  if (JSON.stringify(values) !== JSON.stringify(sorted)) {
+    throw new Error(`❌ Values are not sorted in ${order} order.`);
+  }
+};
