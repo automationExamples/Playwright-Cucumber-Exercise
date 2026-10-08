@@ -1,14 +1,14 @@
 Feature: Purchase Feature
 
-  Background:
+Background:
     Given I open the "https://www.saucedemo.com/" page
 
-  Scenario:  Validate successful purchase text
-  Then I will login as 'standard_user'
-  Then I will add the backpack to the cart
-    # TODO: Select the cart (top-right)
-    # TODO: Select Checkout
-    # TODO: Fill in the First Name, Last Name, and Zip/Postal Code
-    # TODO: Select Continue
-    # TODO: Select Finish
-    # TODO: Validate the text 'Thank you for your order!'
+Scenario: Validate successful purchase text
+    Then I will login as 'standard_user'
+    Then I will add the backpack to the cart
+    When I open the shopping cart
+    And I proceed to checkout
+    And I enter my checkout information
+    And I continue the checkout
+    And I finish the purchase
+    Then I should see the purchase confirmation "Thank you for your order!"
