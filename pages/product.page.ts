@@ -1,3 +1,5 @@
+//ProductPage
+
 import { Page } from "@playwright/test"
 
 export class Product {
